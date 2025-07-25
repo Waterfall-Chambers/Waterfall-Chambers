@@ -1,0 +1,37 @@
+    .membership-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.3);
+      padding: 2rem;
+      max-width: 600px;
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .form-floating label {
+      color: #ccc;
+    }
+
+    .form-control,
+    .form-select {
+      background-color: rgba(255, 255, 255, 0.08);
+      color: white;
+      border: none;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+      background-color: rgba(255, 255, 255, 0.1);
+      box-shadow: none;
+      color: white;
+    }
+
+    .btn-submit {
+      background-color: #00b894;
+      border: none;
+    }
+
+    .btn-submit:hover {
+      background-color: #019875;
+    }
