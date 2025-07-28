@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Untree.co" />
-    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="shortcut icon" href="/static/Waterfall CA SA Chambers logo/Png/Waterfall CA SA icon inverse.png" />
 
     <meta name="description" content="" />
     <meta name="keywords" content="bootstrap, bootstrap5" />
@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="/static/styles/aos.css" />
     <link rel="stylesheet" href="/static/styles/style.css" />
     <link rel="stylesheet" href="/static/styles/join_org.css">
+    <link rel="stylesheet" href="/static/styles/landing_page_styles.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
@@ -44,7 +45,7 @@
     <div class="site-mobile-menu site-navbar-target">
       <div class="site-mobile-menu-header">
         <div class="site-mobile-menu-close">
-          <span class="icofont-close js-menu-toggle"></span>
+          <i class="fi fi-rr-menu-burger js-menu-toggle"></i>
         </div>
       </div>
       <div class="site-mobile-menu-body"></div>
@@ -54,15 +55,19 @@
     <div class="container">
         <div class="menu-bg-wrap">
         <div class="site-navigation d-flex justify-content-between align-items-center">
-            <a href="index.html" class="logo m-0" style="text-decoration:none;">Waterfall Chambers</a>
+            <a href="index.html" class="logo m-0" style="text-decoration:none;">
+              <div class="logo_box">
+                <img src="/static/Waterfall CA SA Chambers logo/Png/Waterfall CA SA Logo orig.png" class="logo">
+              </div>
+            </a>
 
             <ul class="js-clone-nav site-menu d-none d-lg-flex gap-4 mb-0">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="services.html">Membership</a></li>
-            <li><a href="about.html">Partners</a></li>
-            <li><a href="services.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+              <li class="active"><a href="index.html"><strong>Home</strong></a></li>
+              <li><a href="services.html"><strong>Services</strong></a></li>
+              <li><a href="industries.html"><strong>Industries</strong></a></li>
+              <li><a href="freelancers.html"><strong>Freelancers</strong></a></li>
+              <li><a href="about.html"><strong>About Us</strong></a></li>
+              <li><a href="contact.html"><strong>Contact Us</strong></a></li>
             </ul>
 
             <a href="#" class="burger js-menu-toggle d-lg-none">
@@ -80,7 +85,7 @@
           style="background-image: url('/static/images/samuel-scalzo-xyuYk9oLA8I-unsplash.jpg')"
         ></div>
       </div>
-    <div class="container">
+    <div class="container title_section">
         <div class="row justify-content-center align-items-center text-center">
         <div class="col-lg-9">
             <h1 class="display-5 fw-bold mb-2" style="color:white;" data-aos="fade-up">
@@ -90,7 +95,7 @@
             Unifying Industry. Amplifying Impact.
             </h4>
 
-            <center>
+            <!--<center>
             <div class="membership-card shadow-lg rounded-4 p-4">
             <h2 class="mb-4 text-center text-white">Become a Member</h2>
             <form>
@@ -150,7 +155,7 @@
                 </div>
             </form>
             </div>
-            </center>
+            </center>-->
 
         </div>
         </div>
@@ -158,15 +163,31 @@
 
     </div>
 
+    <section class="about py-5 bg-light">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-12 col-lg-12">
+            <h2 class="fw-bold mb-4 text-primary">Who Are We?</h2>
+            <p class="lead text-muted">
+              Founded in 2024 and located in the prestigious Waterfall precinct of South Africa, <strong>Waterfall Chambers</strong> is a private, forward thinking collective designed exclusively for CA(SA) professionals and leaders across finance, law, and innovation.
+            </p>
+            <p class="text-muted">
+              We go beyond traditional workspaces we are a dynamic network that fosters bold ideas, meaningful collaboration, and lasting professional growth. Our members are part of an elite community where credibility, influence, and strategic advancement are cultivated every day.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="semi_about py-5">
     <div class="container">
         <div class="row align-items-center g-5">
         <!-- Text Column -->
         <div class="col-12 col-lg-6">
-            <h2 class="fw-bold">Why Join Waterfall Chambers</h2>
+            <h2 class="fw-bold text-primary">Why Join Waterfall Chambers</h2>
             <p>
             Join a thriving network of <b>700+ professionals</b> across finance, tech, law, and construction.  
-            As a member, you gain access to valuable connections, strategic collaborations, and increased visibility within your industry — all under the banner of an elite, independent organization.
+            As a member, you gain access to valuable connections, strategic collaborations, and increased visibility within your industry all under the banner of an elite, independent organization.
             </p>
             <!-- Stats Row -->
             <div class="row g-3 text-center">
@@ -217,7 +238,7 @@
         <div class="col-12 col-md-6 col-lg-4">
             <div class="card h-100 bg-light bg-opacity-10 border-0 rounded-4 shadow-sm p-4">
             <div class="mb-3 text-primary">
-                <i class="fi fi-rr-briefcase fa-2x"></i>
+                <i class="fi fi-rr-graduation-cap fa-2x"></i>
             </div>
             <h5 class="fw-bold text-white">Legal Consulting</h5>
             <p class="text-white-50">Expert legal advisory for both startups and established firms, backed by years of industry experience.</p>
@@ -227,7 +248,7 @@
         <!-- Card 2 -->
         <div class="col-12 col-md-6 col-lg-4">
             <div class="card h-100 bg-light bg-opacity-10 border-0 rounded-4 shadow-sm p-4">
-            <div class="mb-3 text-warning">
+            <div class="mb-3 text-primary">
                 <i class="fi fi-rr-network fa-2x"></i>
             </div>
             <h5 class="fw-bold text-white">Professional Networking</h5>
@@ -238,7 +259,7 @@
         <!-- Card 3 -->
         <div class="col-12 col-md-6 col-lg-4">
             <div class="card h-100 bg-light bg-opacity-10 border-0 rounded-4 shadow-sm p-4">
-            <div class="mb-3 text-success">
+            <div class="mb-3 text-primary">
                 <i class="fi fi-rr-briefcase fa-2x"></i>
             </div>
             <h5 class="fw-bold text-white">Business Development</h5>
@@ -248,7 +269,7 @@
 
         <div class="col-12 col-md-6 col-lg-4">
             <div class="card h-100 bg-light bg-opacity-10 border-0 rounded-4 shadow-sm p-4">
-            <div class="mb-3 text-danger">
+            <div class="mb-3 text-primary">
                 <i class="fi fi-rr-laptop fa-2x"></i>
             </div>
             <h5 class="fw-bold text-white">Tech & Support</h5>
@@ -256,102 +277,146 @@
             </div>
         </div>
 
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 bg-light bg-opacity-10 border-0 rounded-4 shadow-sm p-4">
+            <div class="mb-3 text-primary">
+              <i class="fi fi-rr-calculator fa-2x"></i>
+            </div>
+            <h5 class="fw-bold text-white">Auditing</h5>
+            <p class="text-white-50">
+              Independent, high quality audit services that ensure transparency, regulatory compliance, and meaningful insights to drive confidence in your business decisions.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 bg-light bg-opacity-10 border-0 rounded-4 shadow-sm p-4">
+            <div class="mb-3 text-primary">
+              <i class="fi fi-rr-money fa-2x"></i>
+            </div>
+            <h5 class="fw-bold text-white">Accounting</h5>
+            <p class="text-white-50">
+              Reliable, expert led accounting solutions tailored to help you manage finances effectively, stay compliant, and scale your business with clarity and confidence.
+            </p>
+          </div>
+        </div>
+
         </div>
     </div>
     </section>
 
-    <div class="site-footer">
+    <section class="our_clients py-5">
+    <div class="container">
+      <h3 class="text-center text-primary mb-4 fw-semibold">Our Clients & Partners</h2>
+      <div class="logo-slider overflow-hidden position-relative">
+        <div class="logo-track d-flex">
+          <!-- Repeat logos as needed -->
+          <div class="logo-item px-4">
+            <img src="/static/partners/angloamerican_logo_cmyk.png" alt="Client 1" height="150" />
+          </div>
+          <div class="logo-item px-4">
+            <img src="/static/partners/discovery_logo_0.png" alt="Client 2" height="150" />
+          </div>
+          <div class="logo-item px-4">
+            <img src="/static/partners/icasa.jpg" alt="Client 3" height="150" />
+          </div>
+          <div class="logo-item px-4">
+            <img src="/static/partners/mtn_2022_logo.png" alt="Client 4" height="150" />
+          </div>
+          <div class="logo-item px-4">
+            <img src="/static/partners/seda_-_small_enterprise_development_agency.png" alt="Client 5" height="150" />
+          </div>
+          <!-- Duplicate for seamless looping -->
+          <div class="logo-item px-4">
+            <img src="/static/partners/telkom_mobile.png" alt="Client 1" height="150" />
+          </div>
+          <div class="logo-item px-4">
+            <img src="/static/partners/untitled-1_165.png" alt="Client 2" height="150" />
+          </div>
+          <div class="logo-item px-4">
+            <img src="/static/partners/untitled-1_30.png" alt="Client 3" height="150" />
+          </div>
+          <div class="logo-item px-4">
+            <img src="/static/partners/untitled-1_12.png" alt="Client 4" height="150" />
+          </div>
+          <div class="logo-item px-4">
+            <img src="/static/partners/untitled-1_149.png" alt="Client 5" height="150" />
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <div class="site-footer_two">
       <div class="container">
         <div class="row">
-          <div class="col-lg-4">
+          <!-- Contact Section -->
+          <div class="col-lg-4 col-md-6 mb-4">
             <div class="widget">
               <h3>Contact</h3>
               <address>88 Some Rd. Sandton, South Africa</address>
               <ul class="list-unstyled links">
-                <li><a href="tel://11234567890">+1(123)-456-7890</a></li>
-                <li><a href="tel://11234567890">+1(123)-456-7890</a></li>
-                <li>
-                  <a href="mailto:info@mydomain.com">info@waterfallchambers.co.za</a>
-                </li>
+                <li><a href="tel://11234567890">+1 (123) 456 7890</a></li>
+                <li><a href="mailto:info@waterfallchambers.co.za">info@waterfallchambers.co.za</a></li>
               </ul>
             </div>
-            <!-- /.widget -->
           </div>
-          <!-- /.col-lg-4 -->
-          <div class="col-lg-4">
+
+          <!-- Sources Section -->
+          <div class="col-lg-4 col-md-6 mb-4">
             <div class="widget">
-              <h3>Sources</h3>
+              <h3>Explore</h3>
               <ul class="list-unstyled float-start links">
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Services</a></li>
+                <li><a href="#">About Us</a></li>
                 <li><a href="#">Vision</a></li>
                 <li><a href="#">Mission</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Partners</a></li>
+              </ul>
+              <ul class="list-unstyled float-start links ms-4">
+                <li><a href="#">Creative</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">FAQ</a></li>
                 <li><a href="#">Terms</a></li>
                 <li><a href="#">Privacy</a></li>
               </ul>
-              <ul class="list-unstyled float-start links">
-                <li><a href="#">Partners</a></li>
-                <li><a href="#">Business</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Creative</a></li>
-              </ul>
             </div>
-            <!-- /.widget -->
           </div>
-          <!-- /.col-lg-4 -->
-          <div class="col-lg-4">
+
+          <!-- Links & Socials -->
+          <div class="col-lg-4 col-md-12">
             <div class="widget">
-              <h3>Links</h3>
+              <h3>Quick Links</h3>
               <ul class="list-unstyled links">
                 <li><a href="#">Our Vision</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Contact us</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
               </ul>
-
-              <ul class="list-unstyled social">
-                <li>
-                    <a href="#" class="text-white text-center fs-4"><i class="fab fa-instagram"></i></a>
-                </li>
-                <li>
-                    <a href="#" class="text-white text-center fs-4"><i class="fab fa-twitter"></i></a>
-                </li>
-                <li>
-                    <a href="#" class="text-white text-center fs-4"><i class="fab fa-facebook-f"></i></a>
-                </li>
-                <li>
-                    <a href="#" class="text-white text-center fs-4"><i class="fab fa-linkedin-in"></i></a>
-                </li>
+              <ul class="list-unstyled social mt-3">
+                <li><a href="#"><i class="fab fa-instagram text-center"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter text-center"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook-f text-center"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in text-center"></i></a></li>
               </ul>
             </div>
-            <!-- /.widget -->
           </div>
-          <!-- /.col-lg-4 -->
         </div>
-        <!-- /.row -->
 
+        <!-- Bottom Row -->
         <div class="row mt-5">
-          <div class="col-12 text-center">
-
+          <div class="col-12 text-center copyright">
             <p>
-              Copyright &copy;
-              <script>
-                document.write(new Date().getFullYear());
-              </script>
-              . All Rights Reserved. &mdash;
-              <a href="#">Waterfall Chambers</a>
+              &copy; <script>document.write(new Date().getFullYear());</script> Waterfall Chambers. All Rights Reserved.
             </p>
-            <div>
-              Developed By
-              <a href="#" target="_blank">WytBusiness Solutions</a>
-            </div>
+            <p>
+              Developed by <a href="#" target="_blank">WytBusiness Solutions</a>
+            </p>
           </div>
         </div>
       </div>
-      <!-- /.container -->
     </div>
-    <!-- /.site-footer -->
 
     <!-- Preloader -->
     <!--<div id="overlayer"></div>
