@@ -1,0 +1,51 @@
+    .hero {
+      background: linear-gradient(to right, #0d6efd, #0b5ed7);
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+    }
+    .card-img-top {
+      object-fit: cover;
+      height: 200px;
+    }
+    .timeline {
+      border-left: 3px solid #0d6efd;
+      margin: 50px 0;
+      padding-left: 30px;
+    }
+    .timeline h5 {
+      margin-top: 0;
+    }
+    .team-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+    .icon-box {
+      text-align: center;
+      padding: 20px;
+    }
+    .icon-box i {
+      font-size: 40px;
+      color: #0d6efd;
+      margin-bottom: 15px;
+    }
+
+.company_logo {
+    width: 100%;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    mix-blend-mode: multiply;
+}
+
+.team-card:hover {
+    transform: translateY(-4px);
+    transition: 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
