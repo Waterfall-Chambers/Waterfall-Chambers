@@ -32,16 +32,20 @@
     }
 
 .company_logo {
-    width: 100%;
+    width: 100px;
     height: 100px;
     object-fit: contain;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 12px;
+    padding: 8px;
     background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    mix-blend-mode: multiply;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Optional: Hover effect */
+.company_logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
 .team-card:hover {
