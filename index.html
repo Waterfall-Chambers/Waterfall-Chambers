@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="/static/styles/aos.css" />
     <link rel="stylesheet" href="/static/styles/style.css" />
     <link rel="stylesheet" href="/static/styles/join_org.css">
+    <link rel="stylesheet" href="/static/styles/team.css">
     <link rel="stylesheet" href="/static/styles/landing_page_styles.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -64,6 +65,7 @@
             <ul class="js-clone-nav site-menu d-none d-lg-flex gap-4 mb-0">
               <li class="active"><a href="index.html"><strong>Home</strong></a></li>
               <li><a href="services.html"><strong>Services</strong></a></li>
+              <li><a href="clients.html"><strong>Clients</strong></a></li>
               <li><a href="industries.html"><strong>Industries</strong></a></li>
               <li><a href="about.html"><strong>About Us</strong></a></li>
               <li><a href="contact.html"><strong>Contact Us</strong></a></li>
@@ -266,57 +268,15 @@
       </div>
     </section>
 
-    <section class="py-5 bg-light">
+    <section class="team-section py-5 bg-light">
       <div class="container">
-        <div class="row g-4 align-items-start">
-          <!-- Clients Section -->
-          <div class="col-12">
-            <h3 class="text-center text-primary fw-semibold mb-4" data-aos="fade-up">
-              Our Clients
-            </h3>
-            <div class="logo-slider position-relative overflow-hidden">
-              <div class="logo-track d-flex align-items-center">
-                <!-- Logos -->
-                <div class="logo-item px-4">
-                  <img src="/static/partners/angloamerican_logo_cmyk.png" alt="Anglo American Logo" />
-                </div>
-                <div class="logo-item px-4">
-                  <img src="/static/partners/discovery_logo_0.png" alt="Discovery Logo" />
-                </div>
-                <div class="logo-item px-4">
-                  <img src="/static/partners/mtn_2022_logo.png" alt="MTN Logo" />
-                </div>
-                <div class="logo-item px-4">
-                  <img src="/static/partners/sabc_logo.ai_.png" alt="SABC Logo" />
-                </div>
-                <div class="logo-item px-4">
-                  <img src="/static/partners/seda_-_small_enterprise_development_agency.png" alt="SEDA Logo" />
-                </div>
-                <div class="logo-item px-4">
-                  <img src="/static/partners/telkom_mobile.png" alt="Telkom Logo" />
-                </div>
-                <!-- Duplicate logos for seamless infinite scroll -->
-                <div class="logo-item px-4">
-                  <img src="/static/partners/angloamerican_logo_cmyk.png" alt="Anglo American Logo" />
-                </div>
-                <div class="logo-item px-4">
-                  <img src="/static/partners/discovery_logo_0.png" alt="Discovery Logo" />
-                </div>
-                <div class="logo-item px-4">
-                  <img src="/static/partners/mtn_2022_logo.png" alt="MTN Logo" />
-                </div>
-                <div class="logo-item px-4">
-                  <img src="/static/partners/sabc_logo.ai_.png" alt="SABC Logo" />
-                </div>
-                <div class="logo-item px-4">
-                  <img src="/static/partners/seda_-_small_enterprise_development_agency.png" alt="SEDA Logo" />
-                </div>
-                <div class="logo-item px-4">
-                  <img src="/static/partners/telkom_mobile.png" alt="Telkom Logo" />
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="text-center mb-5">
+          <h2 class="text-primary fw-bold mb-4">Our Team</h2>
+          <p class="text-muted">Meet the experts driving our success</p>
+        </div>
+
+        <div class="row g-4" id="team-row">
+          <!-- Team members injected via JS -->
         </div>
       </div>
     </section>
@@ -332,8 +292,8 @@
             <p class="text-muted">B-BBEE Certified</p>
           </div>
           <div class="col-6 col-md-3">
-            <h3 class="fw-bold text-primary">40%</h3>
-            <p class="text-muted">Black Women in Leadership</p>
+            <h3 class="fw-bold text-primary">6+</h3>
+            <p class="text-muted">Independent Firms</p>
           </div>
           <div class="col-6 col-md-3">
             <h3 class="fw-bold text-primary">9</h3>
@@ -422,5 +382,53 @@
     <script src="/static/js/navbar.js"></script>
     <script src="/static/js/counter.js"></script>
     <script src="/static/js/custom.js"></script>
+
+    <script>
+    const teamMembers = [
+      {
+        name: "Thato Makautse CA(SA), AFM",
+        title: "President",
+        image: "/static/partners/Thato.jpg",
+        bio: "Leads the chamber with strategic oversight, ensuring operational excellence and fostering professional growth across member firms."
+      },
+      {
+        name: "Hlawutelo Khosa CA (SA)",
+        title: "Spokesperson",
+        image: "/static/partners/Hlawutelo-Khosa-2-Small.webp",
+        bio: "Represents the chamber publicly, communicates key initiatives, and maintains strong relationships with stakeholders and industry partners."
+      }
+    ];
+      const teamRow = document.getElementById('team-row');
+
+      teamMembers.forEach(member => {
+          const col = document.createElement('div');
+          col.className = 'col-12';
+          col.innerHTML = `
+              <div class="team-member row align-items-center g-3">
+                  <div class="col-12 col-md-4 d-flex justify-content-center">
+                      <div class="member-img-wrapper" style="--bg-image: url('${member.image}');">
+                          <img src="${member.image}" alt="${member.name}" class="member-img">
+                      </div>
+                  </div>
+                  <div class="col-12 col-md-8 member-details">
+                      <h3>${member.name}</h3>
+                      <h5>${member.title}</h5>
+                      <p>${member.bio}</p>
+                  </div>
+              </div>
+          `;
+          teamRow.appendChild(col);
+
+          // Set blurred background dynamically
+          const wrapper = col.querySelector('.member-img-wrapper');
+          wrapper.style.setProperty('background-image', `url(${member.image})`);
+          wrapper.style.setProperty('--bg-image', `url(${member.image})`);
+          wrapper.querySelector('::before');
+          wrapper.style.setProperty('background-image', `url(${member.image})`);
+      });
+    </script>
+
+    <!-- Font Awesome (for icons) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   </body>
 </html>

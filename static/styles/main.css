@@ -59,7 +59,7 @@
   --bs-font-sans-serif: "Work Sans", sans-serif;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --bs-body-font-family: var(--bs-font-sans-serif);
+  --bs-body-font-family: var(--bs-font-monospace);
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
@@ -9218,7 +9218,7 @@ textarea.form-control-lg {
         padding: 10px 15px;
         display: inline-block;
         text-decoration: none !important;
-        color: gray; }
+        color: black; }
         .site-nav .site-navigation .site-menu > li > a:hover {
           color: blue; }
       .site-nav .site-navigation .site-menu > li.cta-button a {

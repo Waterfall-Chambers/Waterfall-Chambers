@@ -63,6 +63,7 @@
             <ul class="js-clone-nav site-menu d-none d-lg-flex gap-4 mb-0">
               <li class="active"><a href="index.html"><strong>Home</strong></a></li>
               <li><a href="services.html"><strong>Services</strong></a></li>
+              <li><a href="clients.html"><strong>Clients</strong></a></li>
               <li><a href="industries.html"><strong>Industries</strong></a></li>
               <li><a href="about.html"><strong>About Us</strong></a></li>
               <li><a href="contact.html"><strong>Contact Us</strong></a></li>
@@ -80,18 +81,22 @@
           style="background-image: url('/static/images/sergey-zolkin-_UeY8aTI6d0-unsplash.jpg')"
         ></div>
       </div>
-    <div class="container title_section">
+      <div class="container title_section">
         <div class="row justify-content-center align-items-center text-center">
-        <div class="col-lg-9">
+          <div class="col-lg-9">
             <h1 class="display-5 fw-bold mb-2" style="color:white;" data-aos="fade-up">
-            <span class="">Contact Us</span>
+              One Standard, Many Specialists
             </h1>
-            <h4 class="mb-5 text-white" data-aos="fade-up" data-aos-delay="100">
-                Unifying Industry. Amplifying Impact.
+            <h4 class="mb-4 text-white" data-aos="fade-up" data-aos-delay="100">
+              South Africa's premier professional chambers of independent CA(SA) firms
             </h4>
+            <p class="lead text-white-50" data-aos="fade-up" data-aos-delay="200">
+              Delivering collective excellence with preserved autonomy, where independent 
+              expertise meets national capability and transformation leadership.
+            </p>
+          </div>
         </div>
-        </div>
-    </div><!--HERE-->
+      </div>
     </div>
 
     <section class="contact-us py-5 bg-light" id="contact">
@@ -123,7 +128,7 @@
       <div class="col-md-7">
         <div class="card shadow border-0">
           <div class="card-body p-4">
-            <form id="contactForm" method="POST" action="{{ url_for('handle_contact_form') }}">
+            <form id="contactForm">
               <div class="row g-3">
                 <div class="col-md-6">
                   <label for="name" class="form-label">Full Name</label>
@@ -142,7 +147,6 @@
                   <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
                 </div>
               </div>
-
               <div class="d-grid mt-4">
                 <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
               </div>
@@ -150,6 +154,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -228,5 +233,62 @@
     <script src="/static/js/navbar.js"></script>
     <script src="/static/js/counter.js"></script>
     <script src="/static/js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module">
+    import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+    // Supabase credentials
+    const SUPABASE_URL = "https://prcfomvjhetnwaohqdrd.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InByY2ZvbXZqaGV0bndhb2hxZHJkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkyNTMyNTMsImV4cCI6MjA3NDgyOTI1M30.FcVn_1G4GILzq7O7RTP0esDKfRj05CTgJ-sFuRiB3eM";
+    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    // Wait for the DOM to load
+    document.addEventListener("DOMContentLoaded", () => {
+      const contactForm = document.getElementById("contactForm");
+
+      contactForm.addEventListener("submit", async (e) => {
+        e.preventDefault(); // stop page refresh
+
+        const fd = new FormData(contactForm);
+        const messageData = {
+          full_names: fd.get("name"),
+          email: fd.get("email"),
+          subject: fd.get("subject"),
+          message: fd.get("message"),
+        };
+
+        try {
+          const { data, error } = await supabase
+            .from("Waterfall_Chambers_Contact_Us")
+            .insert([messageData]);
+
+          if (error) throw error;
+
+          Swal.fire({
+            icon: "success",
+            title: "Message Sent!",
+            text: "Thank you for contacting us. We’ll get back to you shortly.",
+            showConfirmButton: false,
+            timer: 2500,
+            timerProgressBar: true,
+            position: "top-end"
+          });
+
+          contactForm.reset(); // clear form
+        } catch (err) {
+          console.error(err);
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Error sending message: " + err.message,
+            confirmButtonColor: "#d33"
+          });
+        }
+      });
+    });
+    </script>
+
   </body>
 </html>

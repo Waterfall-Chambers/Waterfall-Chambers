@@ -62,6 +62,7 @@
             <ul class="js-clone-nav site-menu d-none d-lg-flex gap-4 mb-0">
               <li class="active"><a href="index.html"><strong>Home</strong></a></li>
               <li><a href="services.html"><strong>Services</strong></a></li>
+              <li><a href="clients.html"><strong>Clients</strong></a></li>
               <li><a href="industries.html"><strong>Industries</strong></a></li>
               <li><a href="about.html"><strong>About Us</strong></a></li>
               <li><a href="contact.html"><strong>Contact Us</strong></a></li>
@@ -101,56 +102,57 @@
     <!-- Form Section -->
     <div class="container form-section mt-5">
         <h2 class="mb-4 text-center text-dark">Freelancer Registration Form</h2>
-        <form>
-        <div class="row mb-3">
-            <div class="col-md-6">
-            <label for="fullName" class="form-label">Full Name</label>
-            <input type="text" class="form-control" id="fullName" required>
-            </div>
-            <div class="col-md-6">
-            <label for="email" class="form-label">Email Address</label>
-            <input type="email" class="form-control" id="email" required>
-            </div>
+    <form id="applicationForm">
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="fullName" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="fullName" name="fullName" required>
         </div>
-
-        <div class="row mb-3">
-            <div class="col-md-6">
-            <label for="phone" class="form-label">Phone Number</label>
-            <input type="tel" class="form-control" id="phone">
-            </div>
-            <div class="col-md-6">
-            <label for="location" class="form-label">Location</label>
-            <input type="text" class="form-control" id="location">
-            </div>
+        <div class="col-md-6">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" class="form-control" id="email" name="email" required>
         </div>
+      </div>
 
-        <div class="mb-3">
-            <label for="skills" class="form-label">Skills / Services Offered</label>
-            <input type="text" class="form-control" id="skills" placeholder="e.g., Web Design, Accounting, Marketing" required>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="tel" class="form-control" id="phone" name="phone">
         </div>
-
-        <div class="mb-3">
-            <label for="experience" class="form-label">Years of Experience</label>
-            <input type="number" class="form-control" id="experience" min="0">
+        <div class="col-md-6">
+          <label for="location" class="form-label">Location</label>
+          <input type="text" class="form-control" id="location" name="location">
         </div>
+      </div>
 
-        <div class="mb-3">
-            <label for="bio" class="form-label">Brief Bio</label>
-            <textarea class="form-control" id="bio" rows="4"></textarea>
-        </div>
+      <div class="mb-3">
+        <label for="skills" class="form-label">Skills / Services Offered</label>
+        <input type="text" class="form-control" id="skills" name="skills" placeholder="e.g., Web Design, Accounting, Marketing" required>
+      </div>
 
-        <div class="mb-3">
-            <label for="portfolio" class="form-label">Portfolio Link (optional)</label>
-            <input type="url" class="form-control" id="portfolio">
-        </div>
+      <div class="mb-3">
+        <label for="experience" class="form-label">Years of Experience</label>
+        <input type="number" class="form-control" id="experience" name="experience" min="0">
+      </div>
 
-        <div class="mb-3">
-            <label for="cv" class="form-label">Upload CV (PDF)</label>
-            <input class="form-control" type="file" id="cv" accept=".pdf">
-        </div>
+      <div class="mb-3">
+        <label for="bio" class="form-label">Brief Bio</label>
+        <textarea class="form-control" id="bio" name="bio" rows="4"></textarea>
+      </div>
 
-        <button type="submit" class="btn btn-primary w-100">Submit Application</button>
-        </form>
+      <div class="mb-3">
+        <label for="portfolio" class="form-label">Portfolio Link (optional)</label>
+        <input type="url" class="form-control" id="portfolio" name="portfolio">
+      </div>
+
+      <div class="mb-3">
+        <label for="cv" class="form-label">CV / Resume Link</label>
+        <input class="form-control" type="text" id="cv" name="cv">
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Submit Application</button>
+      </form>
+
     </div>
     <br /><br />
 
@@ -222,5 +224,60 @@
 <script src="/static/js/navbar.js"></script>
 <script src="/static/js/counter.js"></script>
 <script src="/static/js/custom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script type="module">
+  import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+  // Replace with your project credentials from Supabase → Settings → API
+  const SUPABASE_URL = "https://prcfomvjhetnwaohqdrd.supabase.co";
+  const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InByY2ZvbXZqaGV0bndhb2hxZHJkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkyNTMyNTMsImV4cCI6MjA3NDgyOTI1M30.FcVn_1G4GILzq7O7RTP0esDKfRj05CTgJ-sFuRiB3eM";
+
+  const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  document.getElementById("applicationForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const fd = new FormData(e.target);
+
+    // prepare row data
+    const application = {
+      full_names: fd.get("fullName"),
+      email: fd.get("email"),
+      phone_number: fd.get("phone"),
+      location: fd.get("location"),
+      services: fd.get("skills"),
+      experience: fd.get("experience"),
+      bio: fd.get("bio"),
+      portfolio_link: fd.get("portfolio"),
+      cv_link: fd.get("cv")
+    };
+
+    // insert into table "Waterfall_Chambers_Freelancers"
+    const { data, error } = await supabase.from("Waterfall_Chambers_Freelancers").insert([application]);
+    if (error) {
+      console.error(error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Error submitting application: ' + error.message,
+        confirmButtonColor: '#d33'
+      });
+    } else {
+      Swal.fire({
+        icon: 'success',
+        title: 'Success!',
+        text: 'Your application has been submitted successfully!',
+        showConfirmButton: false,
+        timer: 2500, // auto-close after 2.5 seconds
+        timerProgressBar: true,
+        position: 'top-end'
+      });
+      e.target.reset(); // clear form
+    }
+
+  });
+</script>
+
 </body>
 </html>

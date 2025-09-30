@@ -1,0 +1,80 @@
+.team-member {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+/* Image wrapper with blurred background */
+.member-img-wrapper {
+    flex-shrink: 0;
+    width: 250px;
+    height: 250px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+/* Blurred background layer */
+.member-img-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-size: cover;
+    background-position: center;
+    filter: blur(15px) brightness(0.6);
+    z-index: 0;
+}
+
+/* Foreground image */
+.member-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Member details */
+.member-details h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+}
+.member-details h5 {
+    margin: 5px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #007bff;
+}
+.member-details p {
+    margin: 10px 0 0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .team-member {
+        flex-direction: column;
+        text-align: center;
+    }
+    .member-img-wrapper {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
