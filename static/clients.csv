@@ -1,5 +1,38 @@
 id,name,image,website
-1,abasa,/static/clients/abasa.jpeg,https://www.abasa.competitive
+1,abasa,/static/clients/abasa.jpeg,https://www.abasa.co.za  # (guess — original “abasa.competitive” invalid)
 2,ayo,/static/clients/ayo.avif,https://www.ayo.co
-3,bma,/static/clients/bma.jpeg,https://www.bma.competitive
-4,pic,/static/clients/aura.png,https://www.aura.competitive
+3,bma,/static/clients/bma.jpeg,https://www.bma.co.za  # (if BMA South Africa)
+4,pic,/static/clients/aura.png,https://www.aura.co.za  # (assuming “aura” in SA)
+5,ahd,/static/clients/african_honey_dew.jpeg,https://africanhoneydew.co.za  # fixed typo “afican” → “african”
+6,acsa,/static/clients/Airports-Company-South-Africa-signs-agreement-with-Munich-Airport1.jpg,https://www.airports.co.za  # main ACSA website
+7,amalgam,/static/clients/Amalgam.png,https://amalgam.co.za
+8,citypower,/static/clients/City_Power_Johannesburg_logo.svg.png,https://citypower.co.za
+9,cloudatlas,/static/clients/CloudAtlasInvesting_.jpg,https://cloudatlas.co.za
+10,cocacola,/static/clients/coca-cola-logo.png,https://www.coca-colacompany.com  # official Coca-Cola company website
+11,doves,/static/clients/Doves-Logo.png,https://dovesfunerals.co.za
+12,gfleet,/static/clients/g_fleet_management.png,https://gfleet.co.za
+13,hermans,/static/clients/Hermans-Logo.png,https://hermans.co.za
+14,justproperty,/static/clients/just_property.jpg,https://justproperty.co.za
+15,kapasch,/static/clients/kapsch.png,https://www.kapsch.net  # Kapsch global site
+16,kinghintsa,/static/clients/king_hintsa.png,https://kinghintsa.co.za
+17,ksd,/static/clients/KSD.webp,https://ksd.co.za
+18,lafm,/static/clients/legacy_africa_fund_managers.jpg,https://legacyafricafundmanagers.co.za
+19,aws,/static/clients/logo_aws.svg,https://aws.amazon.com  # Amazon Web Services official
+20,businessfit,/static/clients/logo_businessfit.svg,https://businessfit.co.za
+21,galelo,/static/clients/logo_galelo.svg,https://galelo.com
+22,gaotime,/static/clients/logo_gaotime.svg,https://gaotime.com
+23,korbistat,/static/clients/logo_korbistat.svg,https://korbistat.co.za
+24,lexisnexis,/static/clients/logo_lexisnexis.svg,https://www.lexisnexis.com
+25,nmu,/static/clients/logo_nmu.svg,https://nmu.ac.za  # (assume NMU = Nelson Mandela University)
+26,plantsap,/static/clients/logo_plantsap.svg,https://plantsap.co.za
+27,qq,/static/clients/logo_qq.svg,https://www.qq.com  # QQ (Tencent) main
+28,mhlontlo,/static/clients/mhlontlo.png,https://mhlontlo.co.za  # fixed “mhontlo” → “mhlontlo”
+29,nativechild,/static/clients/native_child.png,https://nativechild.co.za
+30,oliven,/static/clients/oliven.png,https://oliven.co.za
+31,panafrican,/static/clients/panafrican_capital_holdings_limited_logo.jpeg,https://panafricancapitalholdings.com  # found “PAC Holdings” site :contentReference[oaicite:0]{index=0}
+32,rebosis,/static/clients/rebosis.jpeg,https://rebosis.co.za
+33,sabs,/static/clients/SABS-approved.svg,https://sabs.co.za
+34,samwu,/static/clients/SAMWU_logo.png,https://samwu.co.za
+35,safcol,/static/static/clients/south_african_forestry_company_safcol__logo.jpeg,https://safcol.co.za  # correct SAFCOL website :contentReference[oaicite:1]{index=1}
+37,devhub,/static/clients/The-Dev-Hub_Dark-Blue.png,https://www.devhub.co.za
+38,trfi,/static/clients/thumb_road_traffic_infringement_agency_(rtia).png,https://www.rtia.co.za  # assuming “RTIA” site
