@@ -100,15 +100,16 @@
 
         <!-- Fullscreen Modal -->
         <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen modal-dialog-centered">
-            <div class="modal-content bg-dark text-white">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-light text-white">
             <div class="modal-header border-0">
-                <h5 class="modal-title" id="serviceModalLabel"></h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title text-dark" id="serviceModalLabel"></h5>
+                <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body d-flex flex-column flex-md-row gap-4">
+            <div class="modal-body">
                 <img id="modalImage" src="" alt="" style="max-width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px;">
-                <div id="modalDescription"></div>
+                <br /><br />
+                <div id="modalDescription" style="color:black;"></div>
             </div>
             </div>
         </div>
@@ -195,54 +196,53 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('servicesContainer');
-    const modalElement = document.getElementById('serviceModal');
-    const modal = new bootstrap.Modal(modalElement);
-    const modalTitle = document.getElementById('serviceModalLabel');
-    const modalImage = document.getElementById('modalImage');
-    const modalDescription = document.getElementById('modalDescription');
+      const container = document.getElementById('servicesContainer');
+      const modalElement = document.getElementById('serviceModal');
+      const modal = new bootstrap.Modal(modalElement);
+      const modalTitle = document.getElementById('serviceModalLabel');
+      const modalImage = document.getElementById('modalImage');
+      const modalDescription = document.getElementById('modalDescription');
 
-    // Adjust your CSV file path here (must be accessible from the browser)
-    const csvFile = '/static/services.csv';
+      const services = [
+        { id: 1, title: "External and Internal Audit", image: "/static/images/kelly-sikkema-G_91H-3qZOA-unsplash.jpg", short_desc: "Independent audit services to ensure compliance and transparency", full_desc: "We provide both external and internal audit services designed to deliver assurance, strengthen governance, and enhance accountability. Our approach ensures compliance with statutory requirements while identifying risks, inefficiencies, and opportunities for improvement across all financial and operational processes." },
+        { id: 2, title: "Accounting Support and Audit Readiness", image: "/static/images/stellrweb-djb1whucfBY-unsplash.jpg", short_desc: "Accounting expertise with audit readiness support", full_desc: "Our accounting support services prepare organizations for smooth and efficient audits. We streamline financial reporting, ensure compliance with accounting standards, and provide audit readiness assessments to help businesses avoid delays, reduce risks, and maintain operational transparency." },
+        { id: 3, title: "Tax Consulting and Advisory", image: "/static/images/tax-consulting.jpg", short_desc: "Expert tax planning and advisory solutions", full_desc: "We assist businesses and individuals with comprehensive tax consulting services, from compliance and planning to advisory on complex tax matters. Our experts provide tailored strategies to optimize tax efficiency, manage liabilities, and ensure adherence to evolving regulatory requirements." },
+        { id: 4, title: "Financial Modelling and Valuations", image: "/static/images/finance-modelling.jpg", short_desc: "Valuations, modelling, and project finance expertise", full_desc: "We offer robust financial modelling and valuations that support informed decision-making. Our services cover project finance, employee benefits analysis, and corporate valuations, helping clients navigate investments, acquisitions, and strategic initiatives with clarity and precision." },
+        { id: 5, title: "Corporate Finance", image: "/static/images/corporate-finance.jpg", short_desc: "Capital structure and investment advisory", full_desc: "Our corporate finance team helps businesses make informed strategic and financial decisions. We provide guidance on mergers, acquisitions, restructuring, and investment strategies, ensuring organizations are positioned for long-term growth and sustainability." },
+        { id: 6, title: "Transaction Advisory", image: "/static/images/transaction-advisory.jpg", short_desc: "Buy-side and sell-side advisory", full_desc: "We support clients in executing successful transactions with confidence. Our transaction advisory covers buy-side and sell-side support, due diligence, valuation reviews, and deal structuring, ensuring optimal outcomes in mergers, acquisitions, and divestitures." },
+        { id: 7, title: "Capital Raising and Debt & Equity Advisory", image: "/static/images/capital-raising.jpg", short_desc: "Advisory for accessing and structuring capital", full_desc: "We provide expert advisory on raising capital, structuring debt, and equity solutions. Our team assists with funding strategies, investor relations, and market positioning, helping organizations secure the right financing for growth and expansion." },
+        { id: 8, title: "Business Process Re-engineering", image: "/static/images/business-process.jpg", short_desc: "Optimizing business processes for efficiency", full_desc: "We analyze and redesign business processes to enhance efficiency, reduce costs, and improve service delivery. Our approach aligns people, technology, and strategy, ensuring organizations are agile and competitive in today’s market." },
+        { id: 9, title: "Management Consulting", image: "/static/images/management-consulting.jpg", short_desc: "Strategic management and operational advisory", full_desc: "We offer comprehensive management consulting services across infrastructure, strategy, operations, procurement, and performance monitoring. Our goal is to help organizations unlock value, improve performance, and achieve sustainable growth." },
+        { id: 10, title: "ICT Audit Advisory and Digital Forensics", image: "/static/images/ict-audit.jpg", short_desc: "ICT audit, digital forensics, and assurance", full_desc: "We provide ICT audit advisory, digital forensics, and software quality assurance to safeguard businesses from risks and vulnerabilities. Our services ensure robust systems, secure data, and resilient digital operations." },
+        { id: 11, title: "Cloud Engineering and Software Development", image: "/static/images/luca-bravo-XJXWbfSo2f0-unsplash.jpg", short_desc: "Cloud solutions, data analytics, and custom software", full_desc: "We design and implement cloud engineering solutions, advanced data analytics, and bespoke software tailored to business needs. Our expertise enables digital transformation, scalability, and innovation for organizations of all sizes." },
+        { id: 12, title: "Quantification of Economic Damages", image: "/static/images/economic-damages.jpg", short_desc: "Assessment of losses and economic damages", full_desc: "We specialize in the quantification of economic damages, including loss of support and future medical costs. Our precise calculations and expert reports assist in legal proceedings, insurance claims, and settlement negotiations." }
+      ];
 
-    Papa.parse(csvFile, {
-        download: true,
-        header: true,
-        complete: function(results) {
-        const data = results.data.filter(row => row.id); // Filter out empty rows
+      services.forEach(service => {
+        const card = document.createElement('div');
+        card.classList.add('col-md-6', 'col-lg-4', 'mb-4');
 
-        data.forEach(service => {
-            // Create card div
-            const card = document.createElement('div');
-            card.classList.add('col-md-6', 'col-lg-4', 'mb-4');
-
-            card.innerHTML = `
-            <div class="card h-100 bg-light bg-opacity-10 border-0 rounded-4 shadow-sm p-4">
-                <img src="${service.image}" class="card-img-top" alt="${service.title}" style="border-radius:10px;">
-                <div class="card-body d-flex flex-column">
-                <h5 class="card-title">${service.title}</h5>
-                <p class="card-text">${service.short_desc}</p>
-                <button class="btn btn-primary mt-auto" data-id="${service.id}">Learn More</button>
-                </div>
+        card.innerHTML = `
+          <div class="card h-100 bg- bg-opacity-10 border-0 rounded-4 shadow-sm p-4">
+            <img src="${service.image}" class="card-img-top" alt="${service.title}" style="border-radius:10px;">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">${service.title}</h5>
+              <p class="card-text">${service.short_desc}</p>
+              <button class="btn btn-primary mt-auto" data-id="${service.id}">Learn More</button>
             </div>
-            `;
+          </div>
+        `;
 
-            container.appendChild(card);
+        container.appendChild(card);
 
-            // Add event listener for modal trigger
-            card.querySelector('button').addEventListener('click', () => {
-            modalTitle.textContent = service.title;
-            modalImage.src = service.image;
-            modalImage.alt = service.title;
-            modalDescription.textContent = service.full_desc;
-            modal.show();
-            });
+        card.querySelector('button').addEventListener('click', () => {
+          modalTitle.textContent = service.title;
+          modalImage.src = service.image;
+          modalImage.alt = service.title;
+          modalDescription.textContent = service.full_desc;
+          modal.show();
         });
-        },
-        error: function(err) {
-        console.error('Error loading CSV:', err);
-        }
-    });
+      });
     });
     </script>
 
