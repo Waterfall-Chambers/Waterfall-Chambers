@@ -86,99 +86,86 @@
   }
 }
 
-.site-footer_two {
-  background: url('/static/images/samuel-scalzo-xyuYk9oLA8I-unsplash.jpg') no-repeat center center;
-  background-size: cover;
-  position: relative;
-  padding: 60px 0 30px;
-  color: #f1f1f1;
+
+.site-footer_two{
+  background:#0f172a;
+  padding:80px 0 30px;
+  color:#cbd5e1;
 }
 
-.site-footer_two::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.7); /* dark overlay */
-  z-index: 1;
+.footer-logo{
+  height:45px;
+  margin-bottom:20px;
 }
 
-.site-footer_two .container,
-.site-footer_two .row {
-  position: relative;
-  z-index: 2;
+.footer-description{
+  max-width:350px;
+  margin-bottom:20px;
+  line-height:1.6;
 }
 
-.site-footer_two h3 {
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 20px;
+.site-footer_two h4{
+  color:white;
+  margin-bottom:18px;
+  font-size:16px;
 }
 
-.site-footer_two .links li {
-  margin-bottom: 8px;
+.site-footer_two ul{
+  list-style:none;
+  padding:0;
 }
 
-.site-footer_two .links a {
-  color: #ccc;
-  text-decoration: none;
-  transition: color 0.3s;
+.site-footer_two ul li{
+  margin-bottom:10px;
 }
 
-.site-footer_two .links a:hover {
-  color: #fff;
+.site-footer_two a{
+  color:#cbd5e1;
+  text-decoration:none;
+  transition:0.25s;
 }
 
-.site-footer_two .social li {
-  list-style: none;
-  margin-right: 15px;
+.site-footer_two a:hover{
+  color:white;
 }
 
-.site-footer_two .social a {
-  color: #ccc;
-  font-size: 20px;
-  display: inline-block;
-  transition: color 0.3s;
-  text-decoration: none !important;
-  text-align: center;
+.footer-contact{
+  font-size:14px;
+  margin-bottom:15px;
 }
 
-.site-footer_two .social a:hover {
-  color: #fff;
+/* social icons */
+
+.footer-social{
+  display:flex;
+  gap:12px;
+  margin-bottom:20px;
 }
 
-.site-footer_two address {
-  color: #ccc;
-  line-height: 1.8;
-  margin-bottom: 1rem;
+.footer-social a{
+  width:40px;
+  height:40px;
+  border-radius:8px;
+  background:#1e293b;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:0.25s;
 }
 
-.site-footer_two .copyright {
-  margin-top: 40px;
-  font-size: 14px;
-  color: #aaa;
+.footer-social a:hover{
+  background:#0245A3;
+  transform:translateY(-2px);
 }
 
-@media (max-width: 767.98px) {
-  .site-footer_two {
-    text-align: center;
-  }
-
-  .site-footer_two .social {
-    justify-content: center !important;
-  }
-}
-
-#fab_two {
-  position: fixed;
-  bottom: 1em;
-  right: 1em;
-  width: 60px;
-  height: 60px;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+.footer-bottom{
+  border-top:1px solid #334155;
+  margin-top:40px;
+  padding-top:20px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  font-size:14px;
 }
 
 a{
