@@ -52,28 +52,33 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 </div>
 
 <nav class="site-nav glass-nav">
-<div class="container">
-    <div class="menu-bg-wrap">
-    <div class="site-navigation d-flex justify-content-between align-items-center">
-        <a href="index.html" class="logo m-0" style="text-decoration:none;">
-            <div class="logo_box">
-            <img src="/static/Waterfall CA SA Chambers logo/Png/Waterfall CA SA Logo orig.png" class="logo">
-            </div>
+    <div class="container">
+
+    <div class="nav-wrapper">
+
+        <!-- Logo -->
+        <a href="index.html" class="logo-link">
+        <img src="/static/Waterfall CA SA Chambers logo/Waterfall Chambers Approved Logos - PNG-20260309T201432Z-1-001/Waterfall Chambers Approved Logos - PNG/Waterfall-chambers-logo-horizontal_enhanced_nopayoff_transp background.png" class="logo-img">
         </a>
 
-        <ul class="js-clone-nav site-menu d-none d-lg-flex gap-4 mb-0">
-            <li class="active"><a href="index.html"><strong>Home</strong></a></li>
-            <li><a href="services.html"><strong>Services</strong></a></li>
-            <li><a href="clients.html"><strong>Clients</strong></a></li>
-            <li><a href="industries.html"><strong>Industries</strong></a></li>
-            <li><a href="about.html"><strong>About Us</strong></a></li>
-            <li><a href="contact.html"><strong>Contact Us</strong></a></li>
+        <!-- Desktop Menu -->
+        <ul class="site-menu d-none d-lg-flex">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li class="active"><a href="clients.html">Clients</a></li>
+        <li><a href="industries.html">Industries</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="contact-btn">Contact</a></li>
         </ul>
 
-        <i class="fi fi-rr-menu-burger js-menu-toggle d-lg-none" style="font-size:30px;font-weight:bold;color:blue;cursor:pointer;"></i>
+        <!-- Mobile Menu Button -->
+        <div class="mobile-toggle d-lg-none">
+        <i class="fi fi-rr-menu-burger"></i>
+        </div>
+
     </div>
+
     </div>
-</div>
 </nav>
 
 <div class="hero">
@@ -226,20 +231,21 @@ const clients = [
     { id: 37, name: "DevHub", image: "/static/clients/The-Dev-Hub_Dark-Blue.png", website: "https://www.devhub.co.za" },
     { id: 38, name: "Road Traffic Infringement Agency", image: "/static/clients/thumb_road_traffic_infringement_agency_(rtia).png", website: "https://www.rtia.co.za" },
 ];
-
 const clientsRow = document.getElementById('clients-row');
 
 clients.forEach(client => {
-    const col = document.createElement('div');
-    col.className = 'col-6 col-sm-4 col-md-3 d-flex justify-content-center';
-    col.innerHTML = `
-        <div class="client-card">
-            <a href="#" target="_blank">
-                <img src="${client.image}" alt="${client.name}" class="client-logo">
-            </a>
-        </div>
-    `;
-    clientsRow.appendChild(col);
+
+  const col = document.createElement('div');
+  col.className = 'col-6 col-sm-4 col-md-3 col-lg-2';
+
+  col.innerHTML = `
+    <a href="${client.website}" target="_blank" class="client-card">
+        <img src="${client.image}" alt="${client.name}" class="client-logo">
+    </a>
+  `;
+
+  clientsRow.appendChild(col);
+
 });
 </script>
 

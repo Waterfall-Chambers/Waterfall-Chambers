@@ -12,11 +12,11 @@
     .client-header h2 {
         font-size: 2.5rem;
         font-weight: bold;
-        color: #333;
+        color: #152C41;
     }
     .client-header p {
         font-size: 1.1rem;
-        color: #666;
+        color: #C5A04D;
     }
 
     /* Grid Columns */
@@ -73,4 +73,12 @@
     @media (max-width: 576px) {
         .client-card { max-width: 150px; height: 160px; }
         .client-logo { max-height: 60px; }
+    }
+
+    .primary-color{
+    color:#152C41;
+    }
+
+    .secondary-color{
+    color:#C5A04D;
     }

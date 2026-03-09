@@ -50,29 +50,35 @@
       <div class="site-mobile-menu-body"></div>
     </div>
     <nav class="site-nav glass-nav">
-    <div class="container">
-        <div class="menu-bg-wrap">
-        <div class="site-navigation d-flex justify-content-between align-items-center">
-            <a href="index.html" class="logo m-0" style="text-decoration:none;">
-              <div class="logo_box">
-                <img src="/static/Waterfall CA SA Chambers logo/Png/Waterfall CA SA Logo orig.png" class="logo">
-              </div>
-            </a>
+      <div class="container">
 
-            <ul class="js-clone-nav site-menu d-none d-lg-flex gap-4 mb-0">
-              <li class="active"><a href="index.html"><strong>Home</strong></a></li>
-              <li><a href="services.html"><strong>Services</strong></a></li>
-              <li><a href="clients.html"><strong>Clients</strong></a></li>
-              <li><a href="industries.html"><strong>Industries</strong></a></li>
-              <li><a href="about.html"><strong>About Us</strong></a></li>
-              <li><a href="contact.html"><strong>Contact Us</strong></a></li>
-            </ul>
+        <div class="nav-wrapper">
 
-            <i class="fi fi-rr-menu-burger js-menu-toggle d-lg-none" style="font-size:30px;font-weight:bold;color:blue;cursor:pointer;"></i>
+          <!-- Logo -->
+          <a href="index.html" class="logo-link">
+            <img src="/static/Waterfall CA SA Chambers logo/Waterfall Chambers Approved Logos - PNG-20260309T201432Z-1-001/Waterfall Chambers Approved Logos - PNG/Waterfall-chambers-logo-horizontal_enhanced_nopayoff_transp background.png" class="logo-img">
+          </a>
+
+          <!-- Desktop Menu -->
+          <ul class="site-menu d-none d-lg-flex">
+            <li><a href="index.html">Home</a></li>
+            <li class="active"><a href="services.html">Services</a></li>
+            <li><a href="clients.html">Clients</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="contact-btn">Contact</a></li>
+          </ul>
+
+          <!-- Mobile Menu Button -->
+          <div class="mobile-toggle d-lg-none">
+            <i class="fi fi-rr-menu-burger"></i>
+          </div>
+
         </div>
-        </div>
-    </div>
+
+      </div>
     </nav>
+    
     <div class="hero">
       <div class="hero-slide">
         <div
@@ -103,13 +109,13 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content bg-light text-white">
             <div class="modal-header border-0">
-                <h5 class="modal-title text-dark" id="serviceModalLabel"></h5>
+                <h5 class="modal-title primary-color" id="serviceModalLabel"></h5>
                 <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <img id="modalImage" src="" alt="" style="max-width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px;">
                 <br /><br />
-                <div id="modalDescription" style="color:black;"></div>
+                <div id="modalDescription" class="primary-color"></div>
             </div>
             </div>
         </div>
@@ -224,11 +230,11 @@
 
         card.innerHTML = `
           <div class="card h-100 bg- bg-opacity-10 border-0 rounded-4 shadow-sm p-4">
-            <img src="${service.image}" class="card-img-top" alt="${service.title}" style="border-radius:10px;">
+            <img src="${service.image}" class="card-img-top service-image" alt="${service.title}">
             <div class="card-body d-flex flex-column">
-              <h5 class="card-title">${service.title}</h5>
-              <p class="card-text">${service.short_desc}</p>
-              <button class="btn btn-primary mt-auto" data-id="${service.id}">Learn More</button>
+              <h5 class="card-title secondary-color">${service.title}</h5>
+              <p class="card-text primary-color">${service.short_desc}</p>
+              <button class="cta-small mt-auto" data-id="${service.id}">Learn More</button>
             </div>
           </div>
         `;
