@@ -9,7 +9,7 @@
       height: 200px;
     }
     .timeline {
-      border-left: 3px solid #0d6efd;
+      border-left: 3px solid #C5A04D;
       margin: 50px 0;
       padding-left: 30px;
     }
@@ -27,7 +27,7 @@
     }
     .icon-box i {
       font-size: 40px;
-      color: #0d6efd;
+      color: #C5A04D;
       margin-bottom: 15px;
     }
 
@@ -52,4 +52,13 @@
     transform: translateY(-4px);
     transition: 0.3s ease;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.big-cta{
+  background-color:#C5A04D;
+  color:white;
+  border:none;
+  width:100%;
+  height:60px;
+  border-radius:5px;
 }

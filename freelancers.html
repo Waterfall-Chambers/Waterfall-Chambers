@@ -51,28 +51,53 @@
     </div>
     <nav class="site-nav glass-nav">
     <div class="container">
-        <div class="menu-bg-wrap">
-        <div class="site-navigation d-flex justify-content-between align-items-center">
-            <a href="index.html" class="logo m-0" style="text-decoration:none;">
-              <div class="logo_box">
-                <img src="/static/Waterfall CA SA Chambers logo/Png/Waterfall CA SA Logo orig.png" class="logo">
-              </div>
-            </a>
 
-            <ul class="js-clone-nav site-menu d-none d-lg-flex gap-4 mb-0">
-              <li class="active"><a href="index.html"><strong>Home</strong></a></li>
-              <li><a href="services.html"><strong>Services</strong></a></li>
-              <li><a href="clients.html"><strong>Clients</strong></a></li>
-              <li><a href="industries.html"><strong>Industries</strong></a></li>
-              <li><a href="about.html"><strong>About Us</strong></a></li>
-              <li><a href="contact.html"><strong>Contact Us</strong></a></li>
-            </ul>
+    <div class="nav-wrapper">
 
-            <i class="fi fi-rr-menu-burger js-menu-toggle d-lg-none" style="font-size:30px;font-weight:bold;color:blue;cursor:pointer;"></i>
+        <!-- Logo -->
+        <a href="index.html" class="logo-link">
+        <img src="/static/Waterfall CA SA Chambers logo/Waterfall Chambers Approved Logos - PNG-20260309T201432Z-1-001/Waterfall Chambers Approved Logos - PNG/Waterfall-chambers-logo-horizontal_enhanced_nopayoff_transp background.png" class="logo-img">
+        </a>
+
+        <!-- Desktop Menu -->
+        <ul class="site-menu d-none d-lg-flex">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li><a href="industries.html">Industries</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="contact-btn">Contact</a></li>
+        </ul>
+
+        <!-- Mobile Menu Button -->
+        <div class="mobile-toggle d-lg-none">
+        <i class="fi fi-rr-menu-burger"></i>
         </div>
-        </div>
+
     </div>
-    </nav>
+
+    </div>
+    </nav> 
+
+
+  <div class="mobile-menu" id="mobileMenu">
+
+  <div class="mobile-menu-header">
+    <img src="/static/Waterfall CA SA Chambers logo/Waterfall Chambers Approved Logos - PNG-20260309T201432Z-1-001/Waterfall Chambers Approved Logos - PNG/Waterfall-chambers-logo-horizontal_enhanced_nopayoff_transp background.png" class="mobile-logo">
+    <span class="close-menu">&times;</span>
+  </div>
+
+  <ul class="mobile-nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="clients.html">Clients</a></li>
+    <li class="active"><a href="industries.html">Industries</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
+  </div>
+
     <div class="hero">
       <div class="hero-slide">
         <div
@@ -96,12 +121,12 @@
 
       <!-- Hero -->
     <section class="hero-section text-center">
-        <h1 class="display-4 fw-bold text-dark">Join Our Freelance Network</h1>
+        <h1 class="display-4 fw-bold primary-color">Join Our Freelance Network</h1>
     </section>
 
     <!-- Form Section -->
     <div class="container form-section mt-5">
-        <h2 class="mb-4 text-center text-dark">Freelancer Registration Form</h2>
+        <h2 class="mb-4 text-center secondary-color">Freelancer Registration Form</h2>
     <form id="applicationForm">
       <div class="row mb-3">
         <div class="col-md-6">
@@ -150,7 +175,7 @@
         <input class="form-control" type="text" id="cv" name="cv">
       </div>
 
-      <button type="submit" class="btn btn-primary w-100">Submit Application</button>
+      <button type="submit" class="big-cta w-100">Submit Application</button>
       </form>
 
     </div>
@@ -277,6 +302,20 @@
     }
 
   });
+</script>
+
+<script>
+const toggle = document.querySelector('.mobile-toggle');
+const mobileMenu = document.getElementById('mobileMenu');
+const closeMenu = document.querySelector('.close-menu');
+
+toggle.addEventListener('click', ()=>{
+  mobileMenu.classList.add('active');
+});
+
+closeMenu.addEventListener('click', ()=>{
+  mobileMenu.classList.remove('active');
+});
 </script>
 
 </body>

@@ -51,29 +51,53 @@
       <div class="site-mobile-menu-body"></div>
     </div>
     <nav class="site-nav glass-nav">
-    <div class="container">
-        <div class="menu-bg-wrap">
-        <div class="site-navigation d-flex justify-content-between align-items-center">
-            <a href="index.html" class="logo m-0" style="text-decoration:none;">
-              <div class="logo_box">
-                <img src="/static/Waterfall CA SA Chambers logo/Png/Waterfall CA SA Logo orig.png" class="logo">
-              </div>
+        <div class="container">
+
+        <div class="nav-wrapper">
+
+            <!-- Logo -->
+            <a href="index.html" class="logo-link">
+            <img src="/static/Waterfall CA SA Chambers logo/Waterfall Chambers Approved Logos - PNG-20260309T201432Z-1-001/Waterfall Chambers Approved Logos - PNG/Waterfall-chambers-logo-horizontal_enhanced_nopayoff_transp background.png" class="logo-img">
             </a>
 
-            <ul class="js-clone-nav site-menu d-none d-lg-flex gap-4 mb-0">
-              <li class="active"><a href="index.html"><strong>Home</strong></a></li>
-              <li><a href="services.html"><strong>Services</strong></a></li>
-              <li><a href="clients.html"><strong>Clients</strong></a></li>
-              <li><a href="industries.html"><strong>Industries</strong></a></li>
-              <li><a href="about.html"><strong>About Us</strong></a></li>
-              <li><a href="contact.html"><strong>Contact Us</strong></a></li>
+            <!-- Desktop Menu -->
+            <ul class="site-menu d-none d-lg-flex">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="clients.html">Clients</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="contact-btn">Contact</a></li>
             </ul>
 
-            <i class="fi fi-rr-menu-burger js-menu-toggle d-lg-none" style="font-size:30px;font-weight:bold;color:blue;cursor:pointer;"></i>
+            <!-- Mobile Menu Button -->
+            <div class="mobile-toggle d-lg-none">
+            <i class="fi fi-rr-menu-burger"></i>
+            </div>
+
         </div>
+
         </div>
-    </div>
-    </nav>
+    </nav> 
+
+    <div class="mobile-menu" id="mobileMenu">
+
+      <div class="mobile-menu-header">
+        <img src="/static/Waterfall CA SA Chambers logo/Waterfall Chambers Approved Logos - PNG-20260309T201432Z-1-001/Waterfall Chambers Approved Logos - PNG/Waterfall-chambers-logo-horizontal_enhanced_nopayoff_transp background.png" class="mobile-logo">
+        <span class="close-menu">&times;</span>
+      </div>
+
+      <ul class="mobile-nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li class="active"><a href="industries.html">Industries</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+    </div>    
+
     <div class="hero">
       <div class="hero-slide">
         <div
@@ -104,21 +128,21 @@
     <div class="row g-5 align-items-start">
       <!-- Contact Info -->
       <div class="col-md-5">
-        <h2 class="mb-4">Get in Touch</h2>
-        <p class="text-muted mb-4">
+        <h2 class="mb-4 primary-color">Get in Touch</h2>
+        <p class="text-muted mb-4 secondary-color">
         We’d love to hear from you. Whether you have a question, need more information about our services, or would like to make a booking, simply fill out the form below and we’ll get back to you promptly.
         </p>
         <ul class="list-unstyled">
           <li class="mb-3 d-flex align-items-center">
-            <i class="bi bi-telephone me-2 text-primary fs-5"></i>
+            <i class="bi bi-telephone me-2 primary-color fs-5"></i>
             <span>+27 10 143 0339</span>
           </li>
           <li class="mb-3 d-flex align-items-center">
-            <i class="bi bi-envelope me-2 text-primary fs-5"></i>
+            <i class="bi bi-envelope me-2 primary-color fs-5"></i>
             <span>info@waterfallchambers.co.za</span>
           </li>
           <li class="mb-3 d-flex align-items-center">
-            <i class="bi bi-geo-alt me-2 text-primary fs-5"></i>
+            <i class="bi bi-geo-alt me-2 primary-color fs-5"></i>
             <span>WorkPods, 1024 Brand Road, President Park, Midrand, Gauteng, 1685, South Africa</span>
           </li>
         </ul>
@@ -148,7 +172,7 @@
                 </div>
               </div>
               <div class="d-grid mt-4">
-                <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                <button type="submit" class="big-cta">Send Message</button>
               </div>
             </form>
           </div>
@@ -287,6 +311,20 @@
           });
         }
       });
+    });
+    </script>
+
+    <script>
+    const toggle = document.querySelector('.mobile-toggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenu = document.querySelector('.close-menu');
+
+    toggle.addEventListener('click', ()=>{
+      mobileMenu.classList.add('active');
+    });
+
+    closeMenu.addEventListener('click', ()=>{
+      mobileMenu.classList.remove('active');
     });
     </script>
 

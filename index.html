@@ -82,6 +82,24 @@
       </div>
     </nav>
 
+    <div class="mobile-menu" id="mobileMenu">
+
+      <div class="mobile-menu-header">
+        <img src="/static/Waterfall CA SA Chambers logo/Waterfall Chambers Approved Logos - PNG-20260309T201432Z-1-001/Waterfall Chambers Approved Logos - PNG/Waterfall-chambers-logo-horizontal_enhanced_nopayoff_transp background.png" class="mobile-logo">
+        <span class="close-menu">&times;</span>
+      </div>
+
+      <ul class="mobile-nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li class="active"><a href="industries.html">Industries</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+    </div>
+
     <div class="hero">
       <div class="hero-slide">
         <div
@@ -439,6 +457,19 @@
       });
     </script>
 
+    <script>
+    const toggle = document.querySelector('.mobile-toggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenu = document.querySelector('.close-menu');
+
+    toggle.addEventListener('click', ()=>{
+      mobileMenu.classList.add('active');
+    });
+
+    closeMenu.addEventListener('click', ()=>{
+      mobileMenu.classList.remove('active');
+    });
+    </script>
     <!-- Font Awesome (for icons) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   </body>
