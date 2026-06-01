@@ -1,0 +1,55 @@
+      /* LinkedIn-style hero */
+      .careers-hero {
+        background: linear-gradient(120deg, rgba(10,25,47,0.95), rgba(20,60,120,0.85)),
+        url('/static/images/museums-victoria-7YUvAUbfSV0-unsplash.jpg');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 120px 0;
+        text-align: center;
+      }
+
+      .hero-badge {
+        display: inline-block;
+        padding: 6px 14px;
+        border-radius: 20px;
+        background: rgba(255,255,255,0.1);
+        font-size: 13px;
+        margin-bottom: 15px;
+      }
+
+      .cta-btn {
+        background: #C49E4A;
+        color: white;
+        padding: 14px 26px;
+        border-radius: 10px;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-block;
+        transition: 0.3s;
+      }
+
+      .cta-btn:hover {
+        background: #755b23;
+        transform: translateY(-2px);
+      }
+
+      .section-card {
+        border: 1px solid #eee;
+        border-radius: 16px;
+        padding: 25px;
+        background: #fff;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      }
+
+      .step-number {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background: #142A3D;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }

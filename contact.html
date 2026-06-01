@@ -66,8 +66,9 @@
             <li><a href="services.html">Services</a></li>
             <li><a href="clients.html">Clients</a></li>
             <li><a href="industries.html">Industries</a></li>
+            <li><a href="careers.html">Careers</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="contact.html" class="contact-btn">Contact</a></li>
+            <li class="active"><a href="contact.html" class="contact-btn">Contact</a></li>
             </ul>
 
             <!-- Mobile Menu Button -->
@@ -91,9 +92,10 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="clients.html">Clients</a></li>
-        <li class="active"><a href="industries.html">Industries</a></li>
+        <li><a href="industries.html">Industries</a></li>
+        <li><a href="careers.html">Careers</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li class="active"><a href="contact.html">Contact</a></li>
       </ul>
 
     </div>    
@@ -152,28 +154,80 @@
       <div class="col-md-7">
         <div class="card shadow border-0">
           <div class="card-body p-4">
-            <form id="contactForm">
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label for="name" class="form-label">Full Name</label>
-                  <input type="text" class="form-control" id="name" name="name" required>
+            <form id="contactForm" novalidate>
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="name"
+                            name="name"
+                            minlength="2"
+                            maxlength="100"
+                            pattern="^[A-Za-zÀ-ÿ\s'-]+$"
+                            required
+                        >
+                        <div class="invalid-feedback">
+                            Please enter a valid full name.
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            name="email"
+                            maxlength="255"
+                            required
+                        >
+                        <div class="invalid-feedback">
+                            Please enter a valid email address.
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="subject"
+                            name="subject"
+                            minlength="3"
+                            maxlength="150"
+                            required
+                        >
+                        <div class="invalid-feedback">
+                            Subject must be between 3 and 150 characters.
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea
+                            class="form-control"
+                            id="message"
+                            name="message"
+                            rows="5"
+                            minlength="10"
+                            maxlength="5000"
+                            required
+                        ></textarea>
+                        <div class="invalid-feedback">
+                            Message must contain at least 10 characters.
+                        </div>
+                    </div>
+
                 </div>
-                <div class="col-md-6">
-                  <label for="email" class="form-label">Email Address</label>
-                  <input type="email" class="form-control" id="email" name="email" required>
+
+                <div class="d-grid mt-4">
+                    <button type="submit" class="big-cta">
+                        Send Message
+                    </button>
                 </div>
-                <div class="col-md-12">
-                  <label for="subject" class="form-label">Subject</label>
-                  <input type="text" class="form-control" id="subject" name="subject" required>
-                </div>
-                <div class="col-md-12">
-                  <label for="message" class="form-label">Message</label>
-                  <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                </div>
-              </div>
-              <div class="d-grid mt-4">
-                <button type="submit" class="big-cta">Send Message</button>
-              </div>
             </form>
           </div>
         </div>
@@ -227,6 +281,7 @@
           <li><a href="/clients.html">Clients</a></li>
           <li><a href="/industries.html">Industries</a></li>
           <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/careers.html">Careers</a></li>
         </ul>
       </div>
 
@@ -280,57 +335,154 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="module">
-    import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
-    // Supabase credentials
-    const SUPABASE_URL = "https://prcfomvjhetnwaohqdrd.supabase.co";
-    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InByY2ZvbXZqaGV0bndhb2hxZHJkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkyNTMyNTMsImV4cCI6MjA3NDgyOTI1M30.FcVn_1G4GILzq7O7RTP0esDKfRj05CTgJ-sFuRiB3eM";
-    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-    // Wait for the DOM to load
+    <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const contactForm = document.getElementById("contactForm");
+        const contactForm = document.getElementById("contactForm");
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
 
-      contactForm.addEventListener("submit", async (e) => {
-        e.preventDefault(); // stop page refresh
+        let isSubmitting = false;
+        const originalBtnText = submitBtn.innerHTML;
 
-        const fd = new FormData(contactForm);
-        const messageData = {
-          full_names: fd.get("name"),
-          email: fd.get("email"),
-          subject: fd.get("subject"),
-          message: fd.get("message"),
-        };
+        contactForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
 
-        try {
-          const { data, error } = await supabase
-            .from("Waterfall_Chambers_Contact_Us")
-            .insert([messageData]);
+            if (isSubmitting) return;
 
-          if (error) throw error;
+            // Reset Bootstrap validation state
+            contactForm.classList.remove("was-validated");
 
-          Swal.fire({
-            icon: "success",
-            title: "Message Sent!",
-            text: "Thank you for contacting us. We’ll get back to you shortly.",
-            showConfirmButton: false,
-            timer: 2500,
-            timerProgressBar: true,
-            position: "top-end"
-          });
+            const name = contactForm.elements["name"]?.value.trim();
+            const email = contactForm.elements["email"]?.value.trim().toLowerCase();
+            const subject = contactForm.elements["subject"]?.value.trim();
+            const message = contactForm.elements["message"]?.value.trim();
 
-          contactForm.reset(); // clear form
-        } catch (err) {
-          console.error(err);
-          Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Error sending message: " + err.message,
-            confirmButtonColor: "#d33"
-          });
-        }
-      });
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const nameRegex = /^[A-Za-zÀ-ÿ\s'-]+$/;
+
+            // Bootstrap HTML validation
+            if (!contactForm.checkValidity()) {
+                contactForm.classList.add("was-validated");
+
+                return Swal.fire({
+                    icon: "warning",
+                    title: "Validation Error",
+                    text: "Please complete all required fields correctly."
+                });
+            }
+
+            // Name Validation
+            if (!nameRegex.test(name)) {
+                document.getElementById("name").focus();
+
+                return Swal.fire({
+                    icon: "warning",
+                    title: "Invalid Name",
+                    text: "Name may only contain letters, spaces, apostrophes and hyphens."
+                });
+            }
+
+            if (name.length < 2 || name.length > 100) {
+                document.getElementById("name").focus();
+
+                return Swal.fire({
+                    icon: "warning",
+                    title: "Invalid Name",
+                    text: "Name must be between 2 and 100 characters."
+                });
+            }
+
+            // Email Validation
+            if (!emailRegex.test(email)) {
+                document.getElementById("email").focus();
+
+                return Swal.fire({
+                    icon: "warning",
+                    title: "Invalid Email",
+                    text: "Please enter a valid email address."
+                });
+            }
+
+            // Subject Validation
+            if (subject.length < 3 || subject.length > 150) {
+                document.getElementById("subject").focus();
+
+                return Swal.fire({
+                    icon: "warning",
+                    title: "Invalid Subject",
+                    text: "Subject must be between 3 and 150 characters."
+                });
+            }
+
+            // Message Validation
+            if (message.length < 10 || message.length > 5000) {
+                document.getElementById("message").focus();
+
+                return Swal.fire({
+                    icon: "warning",
+                    title: "Invalid Message",
+                    text: "Message must be between 10 and 5000 characters."
+                });
+            }
+
+            const formData = new FormData(contactForm);
+
+            try {
+                isSubmitting = true;
+
+                submitBtn.disabled = true;
+                submitBtn.innerHTML =
+                    '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
+
+                const response = await fetch(
+                    "https://formspree.io/f/mredwjgj",
+                    {
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            Accept: "application/json"
+                        }
+                    }
+                );
+
+                const result = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(
+                        result?.errors?.[0]?.message ||
+                        "Unable to send your message."
+                    );
+                }
+
+                await Swal.fire({
+                    icon: "success",
+                    title: "Message Sent!",
+                    text: "Thank you for contacting us. We'll get back to you shortly.",
+                    timer: 2500,
+                    timerProgressBar: true,
+                    showConfirmButton: false,
+                    position: "top-end"
+                });
+
+                contactForm.reset();
+                contactForm.classList.remove("was-validated");
+
+            } catch (err) {
+                console.error("Contact Form Error:", err);
+
+                Swal.fire({
+                    icon: "error",
+                    title: "Submission Failed",
+                    text: err.message || "Something went wrong. Please try again later.",
+                    confirmButtonColor: "#d33"
+                });
+
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+                isSubmitting = false;
+            }
+        });
     });
     </script>
 
