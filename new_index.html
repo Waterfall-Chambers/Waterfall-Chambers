@@ -10,10 +10,9 @@
   <link rel="shortcut icon" href="/static/Waterfall CA SA Chambers logo/Waterfall Chambers Approved Logos - PNG-20260309T201432Z-1-001/Waterfall Chambers Approved Logos - PNG/Waterfall-CA_SA-Chambers-Logo.png" />
 
   <!-- Google Fonts: Space Grotesk (display) · Inter (body) · JetBrains Mono (data/labels) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome (icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -21,7 +20,7 @@
   <!-- Waterfall Chambers Design System — the only stylesheet needed -->
   <link rel="stylesheet" href="/static/styles/new_main.css" />
 
-  <title>Waterfall Chambers</title>
+  <title>Waterfall Chambers — One Standard, Many Specialists</title>
 </head>
 <body>
 
@@ -131,7 +130,7 @@
     </div>
 
     <div class="container title_section">
-      <!--<div class="hero-eyebrow">SA's premier CA(SA) federated chambers</div>-->
+      <div class="hero-eyebrow">SA's premier CA(SA) federated chambers</div>
 
       <h1 data-aos="fade-up">
         One Standard,<br>
@@ -247,8 +246,12 @@
       <div class="grid-2" style="align-items:center;">
 
         <!-- Image -->
-        <div style="width:100%;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-subtle);display:flex;align-items:center;justify-content:center;padding:var(--space-6);background:var(--bg-card);min-height:420px;">
-          <canvas id="wc-globe" width="380" height="380" style="display:block;border-radius:50%;cursor:grab;" aria-label="Spinning globe centered on South Africa"></canvas>
+        <div>
+          <img
+            src="/static/images/nasa-Q1p7bh3SHj8-unsplash.jpg"
+            alt="Waterfall Chambers professional network"
+            style="width:100%;border-radius:var(--radius-lg);object-fit:cover;max-height:440px;border:1px solid var(--border-subtle);"
+          />
         </div>
 
         <!-- Text + mini-stats -->
@@ -319,7 +322,7 @@
 
         <div class="service-card">
           <div class="service-card__icon">
-            <i class="fa fa-calculator" aria-hidden="true"></i>
+            <i class="fa-regular fa-calculator" aria-hidden="true"></i>
           </div>
           <h3 class="service-card__title">Tax &amp; Accounting Support</h3>
           <p class="service-card__body">Tax consulting, regulatory compliance, and accounting support tailored to South Africa's evolving business environment.</p>
@@ -346,7 +349,7 @@
 
         <div class="service-card">
           <div class="service-card__icon">
-            <i class="fa fa-laptop" aria-hidden="true"></i>
+            <i class="fa-regular fa-laptop" aria-hidden="true"></i>
           </div>
           <h3 class="service-card__title">ICT Audit &amp; Technology Advisory</h3>
           <p class="service-card__body">ICT audit, digital forensics, cloud engineering, data &amp; analytics, and bespoke software development for digital transformation.</p>
@@ -364,7 +367,7 @@
 
         <div class="service-card">
           <div class="service-card__icon">
-            <i class="fa fa-shield" aria-hidden="true"></i>
+            <i class="fa-regular fa-shield" aria-hidden="true"></i>
           </div>
           <h3 class="service-card__title">Economic Damages &amp; Forensics</h3>
           <p class="service-card__body">Quantification of economic damages, loss of support, future medical costs, and forensic investigations supporting litigation requirements.</p>
@@ -534,189 +537,6 @@
   <!-- ═══════════════════════════════════════════════════════
        SCRIPTS
   ════════════════════════════════════════════════════════ -->
-<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
-<script>
-(function() {
-  function initGlobe() {
-    var canvas = document.getElementById('wc-globe');
-    if (!canvas) return;
- 
-    var ctx    = canvas.getContext('2d');
-    var W      = canvas.width;
-    var RADIUS = W / 2 - 2;
-    var cx     = W / 2;
-    var cy     = W / 2;
- 
-    var SA     = [28.0, -29.0];
-    var yaw    = -SA[0];
-    var pitch  =  SA[1];
-    var spinning  = true;
-    var dragging  = false;
-    var lastX     = 0;
-    var lastTime  = 0;
-    var land, borders;
- 
-    function getProjection() {
-      return d3.geoOrthographic()
-        .scale(RADIUS)
-        .translate([cx, cy])
-        .rotate([yaw, pitch, 0])
-        .clipAngle(90);
-    }
- 
-    function draw() {
-      var proj = getProjection();
-      var path = d3.geoPath(proj, ctx);
- 
-      ctx.clearRect(0, 0, W, W);
- 
-      /* ocean */
-      ctx.beginPath();
-      ctx.arc(cx, cy, RADIUS, 0, Math.PI * 2);
-      ctx.fillStyle = '#050A14';
-      ctx.fill();
-      ctx.strokeStyle = '#C5A04D';
-      ctx.lineWidth = 1;
-      ctx.stroke();
- 
-      /* graticule */
-      ctx.beginPath();
-      path(d3.geoGraticule()());
-      ctx.strokeStyle = '#C5A04D';
-      ctx.lineWidth = 0.5;
-      ctx.stroke();
- 
-      /* land */
-      if (land) {
-        ctx.beginPath();
-        path(land);
-        ctx.fillStyle = '#0F1F35';
-        ctx.fill();
-        ctx.strokeStyle = '#1A3A5C';
-        ctx.lineWidth = 0.5;
-        ctx.stroke();
-      }
- 
-      /* country borders */
-      if (borders) {
-        ctx.beginPath();
-        path(borders);
-        ctx.strokeStyle = '#26527F';
-        ctx.lineWidth = 0.4;
-        ctx.stroke();
-      }
- 
-      /* SA pin */
-      var saCoord = proj(SA);
-      if (saCoord) {
-        var inFront = d3.geoDistance(SA, [-yaw, -pitch]) < Math.PI / 2;
-        if (inFront) {
-          var sx = saCoord[0], sy = saCoord[1];
- 
-          ctx.beginPath();
-          ctx.arc(sx, sy, 20, 0, Math.PI * 2);
-          ctx.strokeStyle = 'rgba(0,212,255,0.12)';
-          ctx.lineWidth = 1;
-          ctx.stroke();
- 
-          ctx.beginPath();
-          ctx.arc(sx, sy, 11, 0, Math.PI * 2);
-          ctx.strokeStyle = 'rgba(0,212,255,0.30)';
-          ctx.lineWidth = 1;
-          ctx.stroke();
- 
-          ctx.beginPath();
-          ctx.arc(sx, sy, 5, 0, Math.PI * 2);
-          ctx.fillStyle = '#C5A04D';
-          ctx.fill();
- 
-          ctx.beginPath();
-          ctx.arc(sx, sy, 2.5, 0, Math.PI * 2);
-          ctx.fillStyle = '#ffffff';
-          ctx.fill();
-        }
-      }
- 
-      /* rim shine */
-      ctx.beginPath();
-      ctx.arc(cx, cy, RADIUS, 0, Math.PI * 2);
-      var rim = ctx.createRadialGradient(cx - 55, cy - 55, RADIUS * 0.55, cx, cy, RADIUS);
-      rim.addColorStop(0,   'rgba(0,212,255,0.05)');
-      rim.addColorStop(0.7, 'rgba(0,212,255,0)');
-      rim.addColorStop(1,   'rgba(0,212,255,0.10)');
-      ctx.fillStyle = rim;
-      ctx.fill();
-    }
- 
-    function tick(ts) {
-      var dt = Math.min(ts - lastTime, 50);
-      lastTime = ts;
-      if (spinning && !dragging) {
-        yaw += dt * 0.018;
-      }
-      draw();
-      requestAnimationFrame(tick);
-    }
- 
-    /* mouse drag */
-    canvas.addEventListener('mousedown', function(e) {
-      dragging = true;
-      spinning = false;
-      lastX = e.clientX;
-      canvas.style.cursor = 'grabbing';
-    });
-    window.addEventListener('mouseup', function() {
-      if (!dragging) return;
-      dragging = false;
-      spinning = true;
-      canvas.style.cursor = 'grab';
-    });
-    window.addEventListener('mousemove', function(e) {
-      if (!dragging) return;
-      yaw += (e.clientX - lastX) * 0.4;
-      lastX = e.clientX;
-    });
- 
-    /* touch drag */
-    canvas.addEventListener('touchstart', function(e) {
-      dragging = true;
-      spinning = false;
-      lastX = e.touches[0].clientX;
-    }, { passive: true });
-    window.addEventListener('touchend', function() {
-      dragging = false;
-      spinning = true;
-    });
-    window.addEventListener('touchmove', function(e) {
-      if (!dragging) return;
-      yaw += (e.touches[0].clientX - lastX) * 0.4;
-      lastX = e.touches[0].clientX;
-    }, { passive: true });
- 
-    /* load world data then start */
-    fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
-      .then(function(r) { return r.json(); })
-      .then(function(world) {
-        land    = topojson.feature(world, world.objects.land);
-        borders = topojson.mesh(world, world.objects.countries, function(a, b) { return a !== b; });
-        requestAnimationFrame(tick);
-      })
-      .catch(function(err) {
-        console.error('Globe: failed to load world data', err);
-      });
-  }
- 
-  /* run after DOM + external scripts are ready */
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initGlobe);
-  } else {
-    initGlobe();
-  }
-})();
-</script>
- 
-  
   <script>
     /* —— Year —— */
     document.getElementById('year').textContent = new Date().getFullYear();

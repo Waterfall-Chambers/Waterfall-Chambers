@@ -62,3 +62,331 @@
         align-items: center;
         justify-content: center;
       }
+
+/* ===========================
+   STEPS WRAPPER (JOURNEY LAYOUT)
+=========================== */
+.wc-steps__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 30px;
+
+    position: relative;
+}
+
+/* CONNECTING LINE (HORIZONTAL FLOW) */
+.wc-steps__grid::before {
+    content: "";
+    position: absolute;
+    top: 42px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        rgba(21,44,65,0.15),
+        rgba(197,160,77,0.6),
+        rgba(21,44,65,0.15)
+    );
+
+    z-index: 0;
+}
+
+/* ===========================
+   STEP CARD (LAYERED PREMIUM LOOK)
+=========================== */
+.wc-step {
+    background: rgba(248,249,250,0.75);
+    backdrop-filter: blur(8px);
+
+    border: 1px solid rgba(21,44,65,0.08);
+    border-radius: 18px;
+
+    padding: 34px 26px;
+    text-align: center;
+
+    position: relative;
+    z-index: 1;
+
+    transition: all .35s ease;
+}
+
+/* hover = lift + glow + depth */
+.wc-step:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 22px 50px rgba(21,44,65,0.18);
+    border-color: rgba(197,160,77,0.45);
+}
+
+/* soft ambient glow */
+.wc-step::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+
+    background: radial-gradient(
+        circle at top,
+        rgba(197,160,77,0.10),
+        transparent 65%
+    );
+
+    opacity: 0;
+    transition: .4s ease;
+}
+
+.wc-step:hover::before {
+    opacity: 1;
+}
+
+/* ===========================
+   STEP NUMBER (NODE STYLE)
+=========================== */
+.wc-step__number {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #152C41, #0d6efd);
+    color: #fff;
+
+    font-weight: 800;
+    font-size: 1rem;
+
+    position: relative;
+
+    box-shadow: 0 10px 25px rgba(21,44,65,0.25);
+}
+
+/* glowing ring pulse */
+.wc-step__number::after {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+
+    border: 1px solid rgba(197,160,77,0.4);
+    opacity: 0.6;
+}
+
+/* ===========================
+   TEXT HIERARCHY (STRONGER UX)
+=========================== */
+.wc-step__title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #152C41;
+    margin-bottom: 10px;
+}
+
+.wc-step__text {
+    font-size: 0.95rem;
+    color: #5f6b7a;
+    line-height: 1.7;
+}
+
+/* ===========================
+   HOVER MICRO INTERACTION
+=========================== */
+.wc-step:hover .wc-step__number {
+    transform: rotate(-4deg) scale(1.05);
+}
+
+/* ===========================
+   RESPONSIVE (STACK + REMOVE LINE)
+=========================== */
+@media (max-width: 900px) {
+
+    .wc-steps__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wc-steps__grid::before {
+        display: none;
+    }
+}
+
+/* ===========================
+   GRID
+=========================== */
+.wc-candidate__grid{
+  display:grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap:50px;
+  align-items:start;
+}
+
+/* ===========================
+   LEFT SIDE
+=========================== */
+.wc-title{
+  font-size:2.2rem;
+  font-weight:700;
+  color:#152C41;
+  margin-bottom:15px;
+}
+
+.wc-subtitle{
+  color:#6b7280;
+  line-height:1.7;
+  margin-bottom:30px;
+}
+
+/* ===========================
+   INFO CARD (LEFT)
+=========================== */
+.wc-info-card{
+  background:rgba(255,255,255,0.9);
+  border:1px solid rgba(21,44,65,0.08);
+  border-radius:16px;
+  padding:22px;
+  box-shadow:0 10px 30px rgba(21,44,65,0.06);
+}
+
+.wc-info-card__header{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:18px;
+  color:#152C41;
+}
+
+.wc-info-card__list{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.wc-info-item{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  color:#374151;
+  font-size:0.95rem;
+}
+
+.wc-info-item i{
+  color:#10b981;
+  margin-top:3px;
+}
+
+/* ===========================
+   PROFILE CARD (RIGHT)
+=========================== */
+.wc-profile-card{
+  background:linear-gradient(180deg,#ffffff,#f9fafb);
+  border:1px solid rgba(21,44,65,0.08);
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 20px 50px rgba(21,44,65,0.08);
+  position:relative;
+  overflow:hidden;
+}
+
+/* soft glow */
+.wc-profile-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at top,#C5A04D22,transparent 60%);
+  opacity:0.6;
+  pointer-events:none;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+.wc-profile-header{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:20px;
+}
+
+.wc-avatar{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:#152C41;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* ===========================
+   METRICS (UPGRADED)
+=========================== */
+.wc-metrics{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  text-align:center;
+}
+
+.wc-metric h5{
+  margin:0;
+  font-size:1rem;
+  font-weight:700;
+  color:#152C41;
+}
+
+.wc-metric span{
+  font-size:0.75rem;
+  color:#6b7280;
+}
+
+/* ===========================
+   DIVIDER
+=========================== */
+.wc-divider{
+  height:1px;
+  background:rgba(21,44,65,0.08);
+  margin:18px 0;
+}
+
+/* ===========================
+   ACTIVITY FEED (CLEANER)
+=========================== */
+.wc-activity{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.wc-activity-item{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  color:#374151;
+  font-size:0.9rem;
+}
+
+.dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  margin-top:6px;
+}
+
+.dot.success{ background:#10b981; }
+.dot.primary{ background:#3b82f6; }
+.dot.warning{ background:#f59e0b; }
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media(max-width:900px){
+  .wc-candidate__grid{
+    grid-template-columns:1fr;
+  }
+}

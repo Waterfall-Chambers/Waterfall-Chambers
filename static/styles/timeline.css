@@ -1,0 +1,124 @@
+
+/* ===========================
+   TIMELINE CORE
+=========================== */
+
+.timeline{
+    position:relative;
+    padding-left:70px;
+}
+
+/* vertical line */
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:28px;
+    top:0;
+    bottom:0;
+    width:3px;
+    background:linear-gradient(to bottom, #0A2540, #C5A04D, #0A2540);
+    opacity:.4;
+}
+
+/* ===========================
+   ITEM
+=========================== */
+
+.timeline-item{
+    position:relative;
+    margin-bottom:60px;
+}
+
+/* node on line */
+.timeline-node{
+    position:absolute;
+    left:20px;
+    top:18px;
+    width:14px;
+    height:14px;
+    border-radius:50%;
+    background:#C5A04D;
+    box-shadow:0 0 0 6px rgba(197,160,77,.15);
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.timeline-header{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:12px;
+}
+
+/* icon container */
+.timeline-icon{
+    width:48px;
+    height:48px;
+    border-radius:12px;
+    background:#0A2540;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.3s ease;
+}
+
+/* FA ICON */
+.timeline-icon i{
+    color:#fff;
+    font-size:18px;
+    transition:.3s ease;
+}
+
+/* YEAR */
+.timeline-header h5{
+    margin:0;
+    font-size:18px;
+    letter-spacing:1px;
+    font-weight:600;
+}
+
+/* TEXT */
+.timeline p{
+    margin:0;
+    color:#5b6675;
+    line-height:1.8;
+    font-size:15px;
+}
+
+/* ===========================
+   HOVER (SUBTLE TECH FEEL)
+=========================== */
+
+.timeline-item:hover .timeline-icon{
+    background:#C5A04D;
+}
+
+.timeline-item:hover .timeline-icon i{
+    transform:scale(1.15);
+    color:#0A2540;
+}
+
+.timeline-item:hover .timeline-node{
+    transform:scale(1.4);
+    transition:.3s ease;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+    .timeline{
+        padding-left:50px;
+    }
+
+    .timeline::before{
+        left:18px;
+    }
+
+    .timeline-node{
+        left:12px;
+    }
+}

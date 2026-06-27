@@ -1,0 +1,433 @@
+
+/* ===========================
+   BLOCK LAYOUT (REFINED)
+=========================== */
+
+.network-block{
+    margin-top:50px;
+}
+
+.network-title{
+    text-align:center;
+    font-weight:700;
+    letter-spacing:2.5px;
+    font-size:12px;
+    color:#0A2540;
+    margin-bottom:30px;
+    text-transform:uppercase;
+    opacity:.85;
+    position:relative;
+}
+
+/* subtle divider line */
+.network-title::after{
+    content:"";
+    display:block;
+    width:60px;
+    height:2px;
+    background:linear-gradient(to right, transparent, #C5A04D, transparent);
+    margin:12px auto 0;
+    opacity:.6;
+}
+
+.network-title.secondary{
+    color:#C5A04D;
+}
+
+/* ===========================
+   NETWORK LAYOUT
+=========================== */
+
+.network-core,
+.network-extended{
+    display:flex;
+    justify-content:center;
+    gap:28px;
+    flex-wrap:wrap;
+}
+
+/* ===========================
+   PREMIUM CARD (MAIN UPGRADE)
+=========================== */
+
+.network-card{
+    width:240px;
+    padding:28px 22px;
+    border-radius:18px;
+
+    /* glass + depth */
+    background:linear-gradient(145deg, #ffffff, #f7f9fc);
+    border:1px solid rgba(10,37,64,.08);
+
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+
+    transition:all .4s ease;
+
+    /* subtle depth */
+    box-shadow:
+        0 10px 30px rgba(10,37,64,.05),
+        inset 0 1px 0 rgba(255,255,255,.8);
+}
+
+/* soft radial glow layer */
+.network-card::before{
+    content:"";
+    position:absolute;
+    inset:-40%;
+    background:radial-gradient(circle at top, rgba(197,160,77,.18), transparent 60%);
+    opacity:0;
+    transition:.5s ease;
+}
+
+/* smaller variant */
+.network-card.small{
+    width:200px;
+    padding:20px 16px;
+    opacity:.88;
+}
+
+/* ===========================
+   IMAGE (PREMIUM TOUCH)
+=========================== */
+
+.network-card img{
+    width:64px;
+    height:64px;
+    object-fit:contain;
+    margin-bottom:14px;
+    transition:.4s ease;
+
+    filter:grayscale(20%);
+}
+
+/* ===========================
+   TEXT HIERARCHY
+=========================== */
+
+.network-card h5{
+    font-size:14px;
+    margin:0 0 6px;
+    color:#0A2540;
+    font-weight:700;
+    letter-spacing:.3px;
+}
+
+.network-card p{
+    font-size:12px;
+    margin:0;
+    color:#6b7280;
+    line-height:1.4;
+}
+
+/* ===========================
+   HOVER (THIS IS THE PREMIUM FEEL)
+=========================== */
+
+.network-card:hover{
+    transform:translateY(-10px);
+    border-color:rgba(197,160,77,.6);
+
+    box-shadow:
+        0 25px 60px rgba(10,37,64,.12),
+        0 0 0 1px rgba(197,160,77,.15);
+}
+
+.network-card:hover::before{
+    opacity:1;
+}
+
+.network-card:hover img{
+    transform:scale(1.12);
+    filter:grayscale(0%);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+    .network-core,
+    .network-extended{
+        gap:16px;
+    }
+
+    .network-card{
+        width:100%;
+        max-width:300px;
+    }
+}
+
+
+/* ===========================
+   GRID
+=========================== */
+
+.why-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+    margin-top:10px;
+}
+
+/* ===========================
+   VALUE BLOCK (DEPTH VERSION)
+=========================== */
+
+.why-card{
+    display:flex;
+    gap:18px;
+    padding:20px 18px;
+
+    position:relative;
+
+    background:#ffffff;
+    border:1px solid rgba(10,37,64,.06);
+    border-radius:14px;
+
+    transition:all .3s ease;
+
+    /* subtle depth (key fix) */
+    box-shadow:
+        0 1px 2px rgba(10,37,64,.04),
+        0 8px 20px rgba(10,37,64,.04);
+
+    overflow:hidden;
+}
+
+/* left accent (gives identity + structure) */
+.why-card::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:#C5A04D;
+    opacity:.35;
+    transition:.3s ease;
+}
+
+/* ===========================
+   ICON (SUBTLE DEPTH BOX)
+=========================== */
+
+.why-icon{
+    width:44px;
+    height:44px;
+    min-width:44px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:10px;
+
+    background:#f5f7fa;
+
+    border:1px solid rgba(10,37,64,.06);
+
+    transition:.3s ease;
+}
+
+.why-icon i{
+    font-size:16px;
+    color:#0A2540;
+    transition:.3s ease;
+}
+
+/* ===========================
+   TEXT
+=========================== */
+
+.why-content h5{
+    margin:0 0 4px;
+    font-size:15px;
+    font-weight:700;
+    color:#0A2540;
+}
+
+.why-content p{
+    margin:0;
+    font-size:13px;
+    color:#6b7280;
+    line-height:1.7;
+    max-width:720px;
+}
+
+/* ===========================
+   HOVER (DEPTH SHIFT)
+=========================== */
+
+.why-card:hover{
+    transform:translateY(-4px);
+
+    border-color:rgba(197,160,77,.35);
+
+    box-shadow:
+        0 4px 6px rgba(10,37,64,.06),
+        0 18px 40px rgba(10,37,64,.08);
+}
+
+/* accent becomes stronger */
+.why-card:hover::before{
+    opacity:1;
+}
+
+/* icon activates */
+.why-card:hover .why-icon{
+    background:#fff;
+    border-color:rgba(197,160,77,.4);
+}
+
+.why-card:hover .why-icon i{
+    color:#C5A04D;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+    .why-card{
+        flex-direction:row;
+        align-items:flex-start;
+    }
+}
+
+
+/* ===========================
+   FLOW CONTAINER
+=========================== */
+
+.mv-flow{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    position:relative;
+}
+
+/* vertical line */
+.mv-flow::before{
+    content:"";
+    position:absolute;
+    left:18px;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:rgba(197,160,77,.25);
+}
+
+/* ===========================
+   STEP WRAPPER
+=========================== */
+
+.mv-step{
+    display:flex;
+    gap:18px;
+    position:relative;
+}
+
+/* step dot */
+.mv-step::before{
+    content:"";
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#C5A04D;
+    position:absolute;
+    left:13px;
+    top:18px;
+    box-shadow:0 0 0 4px rgba(197,160,77,.15);
+}
+
+/* ===========================
+   META LABEL
+=========================== */
+
+.mv-step-meta{
+    min-width:140px;
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:#6b7280;
+    padding-left:40px;
+    padding-top:14px;
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.mv-step-card{
+    flex:1;
+    background:transparent;
+    border:1px solid #C5A04D;
+    border-radius:14px;
+    padding:18px 20px;
+
+    transition:.3s ease;
+
+    box-shadow:0 10px 25px rgba(10,37,64,.04);
+}
+
+.mv-step-card:hover{
+    transform:translateY(-3px);
+    border-color:rgba(197,160,77,.35);
+}
+
+/* ===========================
+   TEXT
+=========================== */
+
+.mv-step-card h4{
+    margin:0 0 8px;
+    font-size:16px;
+    font-weight:700;
+    color:#C5A04D;
+}
+
+.mv-step-card p{
+    margin:0;
+    font-size:14px;
+    color:#6b7280;
+    line-height:1.7;
+}
+
+/* ===========================
+   VALUES LIST
+=========================== */
+
+.mv-values{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    font-size:13px;
+    color:#6b7280;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+    .mv-step{
+        flex-direction:column;
+        padding-left:20px;
+    }
+
+    .mv-step-meta{
+        padding-left:0;
+        min-width:auto;
+    }
+
+    .mv-flow::before{
+        left:6px;
+    }
+
+    .mv-step::before{
+        left:1px;
+    }
+}

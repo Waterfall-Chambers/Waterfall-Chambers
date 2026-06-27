@@ -19,8 +19,9 @@
 
   <!-- Waterfall Chambers Design System — the only stylesheet needed -->
   <link rel="stylesheet" href="/static/styles/new_main.css" />
-  <link rel="stylesheet" href="/static/styles/modal.css" />
-  <title>Waterfall Chambers | Industries</title>
+  <link rel="stylesheet" href="/static/styles/clients.css" />
+
+  <title>Waterfall Chambers | Clients</title>
 </head>
 <body>
 
@@ -44,8 +45,8 @@
         <ul class="site-menu" role="list">
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Services</a></li>
-          <li><a href="clients.html">Clients</a></li>
-          <li class="active"><a href="industries.html">Industries</a></li>
+          <li class="active"><a href="clients.html">Clients</a></li>
+          <li><a href="industries.html">Industries</a></li>
           <li><a href="careers.html">Careers</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html" class="contact-btn">Contact</a></li>
@@ -111,7 +112,7 @@
 
     <!-- Background photo layer -->
     <div class="hero-slide" aria-hidden="true">
-      <div class="img" style="background-image: url('/static/images/museums-victoria-7YUvAUbfSV0-unsplash.jpg');"></div>
+      <div class="img" style="background-image: url('/static/images/samuel-scalzo-xyuYk9oLA8I-unsplash.jpg');"></div>
     </div>
 
     <!-- Decorative grid overlay -->
@@ -130,7 +131,7 @@
     </div>
 
     <div class="container title_section">
-      <!--<div class="hero-eyebrow">SA's premier CA(SA) federated chambers</div>-->
+      <div class="hero-eyebrow">SA's premier CA(SA) federated chambers</div>
 
       <h1 data-aos="fade-up">
         One Standard,<br>
@@ -156,85 +157,21 @@
 
   </section>
 
-  <section class="section" aria-labelledby="services-heading">
+  <section class="section">
     <div class="container">
 
-      <div class="section-header">
-        <div class="section-tag">Industries We Empower</div>
-        <p>Navigating complex business landscapes with clarity, precision, and innovation.</p>
-      </div>
+        <div class="section-header">
+        <div class="section-tag">Our Clients</div>
 
-      <div class="grid-auto">
-
-        <div class="service-card">
-          <div class="service-card__icon">
-            <i class="fas fa-chart-line" aria-hidden="true"></i>
-          </div>
-          <h3 class="service-card__title">Finance & Banking</h3>
-          <a onclick="showIndustry('finance')" class="service-card__tag">View →</a>
+        <p class="t-body text-center mb-5">
+            Trusted by leading businesses across South Africa.
+        </p>
         </div>
 
-        <div class="service-card">
-          <div class="service-card__icon">
-            <i class="fas fa-microchip" aria-hidden="true"></i>
-          </div>
-          <h3 class="service-card__title">Tech & Innovation</h3>
-          <a onclick="showIndustry('tech')" class="service-card__tag">View →</a>
+        <!-- CLEAN GRID CONTAINER -->
+        <div class="clients-grid" id="clients-row">
+        <!-- JS injects cards -->
         </div>
-
-        <div class="service-card">
-          <div class="service-card__icon">
-            <i class="fas fa-building" aria-hidden="true"></i>
-          </div>
-          <h3 class="service-card__title">Real Estate & Construction</h3>
-          <a onclick="showIndustry('real_estate')" class="service-card__tag">View →</a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-card__icon">
-            <i class="fas fa-heartbeat" aria-hidden="true"></i>
-          </div>
-          <h3 class="service-card__title">Healthcare & Pharmaceuticals</h3>
-          <a onclick="showIndustry('healthcare')" class="service-card__tag">View →</a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-card__icon">
-            <i class="fas fa-university" aria-hidden="true"></i>
-          </div>
-          <h3 class="service-card__title">Public Sector & Education</h3>
-          <a onclick="showIndustry('public_sector')" class="service-card__tag">View →</a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-card__icon">
-            <i class="fas fa-bolt" aria-hidden="true"></i>
-          </div>
-          <h3 class="service-card__title">Energy & Mining</h3>
-          <a onclick="showIndustry('energy')" class="service-card__tag">View →</a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-card__icon">
-            <i class="fas fa-industry" aria-hidden="true"></i>
-          </div>
-          <h3 class="service-card__title">Manufacturing & Retail</h3>
-          <a onclick="showIndustry('manufacturing')" class="service-card__tag">View →</a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-card__icon">
-            <i class="fas fa-balance-scale" aria-hidden="true"></i>
-          </div>
-          <h3 class="service-card__title">Legal & Professional Services</h3>
-          <a onclick="showIndustry('legal')" class="service-card__tag">View →</a>
-        </div>
-
-      </div>
-
-      <div style="text-align:center;margin-top:var(--space-8);">
-        <a href="services.html" class="btn btn--ghost">View all services</a>
-      </div>
 
     </div>
   </section>
@@ -317,85 +254,9 @@
     </div>
   </footer>
 
-  <!-- ===========================
-     INDUSTRY MODAL (PURE SYSTEM)
-=========================== -->
-
-<div class="wc-modal" id="industryModal" aria-hidden="true" role="dialog">
-
-  <!-- BACKDROP -->
-  <div class="wc-modal__backdrop" data-close></div>
-
-  <!-- PANEL -->
-  <div class="wc-modal__panel wc-modal__panel--lg">
-
-    <!-- HEADER -->
-    <div class="wc-modal__header wc-modal__header--gradient">
-
-      <div class="wc-modal__header-content">
-        <h3 class="wc-modal__title" id="industryModalLabel"></h3>
-        <p class="wc-modal__subtitle">Industry insight overview</p>
-      </div>
-
-      <button class="wc-modal__close" data-close aria-label="Close modal">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
-    </div>
-
-    <!-- BODY -->
-    <div class="wc-modal__body">
-
-      <!-- HERO STRIP -->
-      <div class="wc-modal__hero">
-
-        <div class="wc-modal__icon">
-          <i id="industryIcon" aria-hidden="true"></i>
-        </div>
-
-        <div class="wc-modal__hero-text">
-          <div class="wc-modal__title">Industry Breakdown</div>
-          <h2 class="wc-modal__description" id="industryTitle"></h2>
-        </div>
-
-      </div>
-
-      <!-- STACKED CONTENT -->
-      <div class="wc-modal__stack">
-
-        <!-- CHALLENGE -->
-        <section class="wc-panel wc-panel--danger">
-
-          <div class="wc-modal__title">Challenge</div>
-          <p class="wc-modal__description" id="industryChallenge"></p>
-
-        </section>
-
-        <!-- APPROACH -->
-        <section class="wc-panel wc-panel--primary">
-
-          <div class="wc-modal__title">Our Approach</div>
-          <p class="wc-modal__description" id="industryApproach"></p>
-
-        </section>
-
-        <!-- BENEFITS -->
-        <section class="wc-panel wc-panel--neutral">
-
-          <div class="wc-modal__title">Key Benefits</div>
-
-          <ul id="industryBenefits" class="wc-modal__description"></ul>
-
-        </section>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
+  <!-- ═══════════════════════════════════════════════════════
+       SCRIPTS
+  ════════════════════════════════════════════════════════ -->
   <script>
     /* —— Year —— */
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -472,166 +333,82 @@
       });
     }
 
-const industries = {
-    finance: {
-        title: "Finance & Banking",
-        icon: "fas fa-chart-line",
-        challenge: "Navigating complex regulations, digital transformation, and evolving market risks.",
-        approach: "We provide CA(SA)-led audit, advisory, and compliance services tailored for banks, insurers, and asset managers.",
-        benefits: [
-            "Faster audit cycles with proprietary tools",
-            "Comprehensive risk management and regulatory support",
-            "Strategic financial advisory with measurable impact"
-        ],
-    },
-    tech: {
-        title: "Tech & Innovation",
-        icon: "fas fa-microchip",
-        challenge: "Driving scalable growth and compliance in a rapidly evolving tech ecosystem.",
-        approach: "We bridge finance and technology, offering audits, fintech advisory, and digital strategy services.",
-        benefits: [
-            "Custom tech audits and security compliance",
-            "Innovative financial models for startups",
-            "Support for digital transformation initiatives"
-        ],
-    },
-    real_estate: {
-        title: "Real Estate & Construction",
-        icon: "fas fa-building",
-        challenge: "Ensuring financial control and project governance across complex property developments.",
-        approach: "Our teams deliver audit, advisory, and financial modeling solutions for developers and investors.",
-        benefits: [
-            "Project risk assessment and mitigation",
-            "Investor reporting and compliance",
-            "Optimized financial structures for growth"
-        ],
-    },
-    healthcare: {
-        title: "Healthcare & Pharmaceuticals",
-        icon: "fas fa-heartbeat",
-        challenge: "Meeting strict compliance standards while driving innovation in patient care and pharma supply chains.",
-        approach: "We support healthcare providers, hospitals, and pharma firms with governance, audit, and funding strategies.",
-        benefits: [
-            "End-to-end compliance with healthcare regulations",
-            "Optimized supply chain and inventory controls",
-            "Financial sustainability for hospitals and clinics"
-        ],
-    },
-    public_sector: {
-        title: "Public Sector & Education",
-        icon: "fas fa-university",
-        challenge: "Balancing accountability, transparency, and performance in service delivery.",
-        approach: "We partner with government entities, NGOs, and educational institutions to strengthen governance and reporting.",
-        benefits: [
-            "Robust financial oversight and audit compliance",
-            "Capacity building for sustainable growth",
-            "Improved efficiency in service delivery"
-        ],
-    },
-    energy: {
-        title: "Energy & Mining",
-        icon: "fas fa-bolt",
-        challenge: "Managing sustainability, operational risks, and global commodity price fluctuations.",
-        approach: "We advise mining and energy clients on financial structuring, compliance, and ESG.",
-        benefits: [
-            "Optimized cost structures and risk mitigation",
-            "ESG-driven financial and audit reporting",
-            "Long-term sustainability and investor confidence"
-        ],
-    },
-    manufacturing: {
-        title: "Manufacturing & Retail",
-        icon: "fas fa-industry",
-        challenge: "Ensuring supply chain resilience, financial control, and digital adaptation.",
-        approach: "We deliver audit, advisory, and operational improvement solutions.",
-        benefits: [
-            "Cost optimization across supply chains",
-            "Digital solutions for retail growth",
-            "Robust inventory and financial controls"
-        ],
-    },
-    legal: {
-        title: "Legal & Professional Services",
-        icon: "fas fa-balance-scale",
-        challenge: "Balancing growth, compliance, and client trust in a competitive market.",
-        approach: "We optimize financial management and governance for professional firms.",
-        benefits: [
-            "Enhanced governance and financial reporting",
-            "Operational efficiencies for practice management",
-            "Improved client trust through transparency"
-        ],
-    }
-};
+    const clients = [
+        { id: 1, name: "Abasa", image: "/static/clients/abasa.jpeg", website: "https://www.abasa.co.za" },
+        { id: 2, name: "Ayo", image: "/static/clients/ayo.avif", website: "https://www.ayo.co" },
+        { id: 3, name: "BMA", image: "/static/clients/bma.jpeg", website: "https://www.bma.co.za" },
+        { id: 4, name: "Aura", image: "/static/clients/aura.png", website: "https://www.aura.co.za" },
+        { id: 5, name: "African Honey Dew", image: "/static/clients/african_honey_dew.jpeg", website: "https://africanhoneydew.co.za" },
+        { id: 6, name: "Airports Company South Africa", image: "/static/clients/Airports-Company-South-Africa-signs-agreement-with-Munich-Airport1.jpg", website: "https://www.airports.co.za" },
+        { id: 7, name: "Amalgam", image: "/static/clients/Amalgam.png", website: "https://amalgam.co.za" },
+        { id: 8, name: "City Power Johannesburg", image: "/static/clients/City_Power_Johannesburg_logo.svg.png", website: "https://citypower.co.za" },
+        { id: 9, name: "CloudAtlas Investing", image: "/static/clients/CloudAtlasInvesting_.jpg", website: "https://cloudatlas.co.za" },
+        { id: 10, name: "Coca-Cola", image: "/static/clients/coca-cola-logo.png", website: "https://www.coca-colacompany.com" },
+        { id: 11, name: "Doves Funerals", image: "/static/clients/Doves-Logo.png", website: "https://dovesfunerals.co.za" },
+        { id: 12, name: "G Fleet Management", image: "/static/clients/g_fleet_management.png", website: "https://gfleet.co.za" },
+        { id: 13, name: "Hermans", image: "/static/clients/Hermans-Logo.png", website: "https://hermans.co.za" },
+        { id: 14, name: "Just Property", image: "/static/clients/just_property.jpg", website: "https://justproperty.co.za" },
+        { id: 15, name: "Kapsch", image: "/static/clients/kapsch.png", website: "https://www.kapsch.net" },
+        { id: 16, name: "King Hintsa College", image: "/static/clients/king_hintsa.png", website: "https://kinghintsa.co.za" },
+        { id: 17, name: "KSD Municipality", image: "/static/clients/KSD.webp", website: "https://ksd.co.za" },
+        { id: 18, name: "Legacy Africa Fund Managers", image: "/static/clients/legacy_africa_fund_managers.jpg", website: "https://legacyafricafundmanagers.co.za" },
+        { id: 19, name: "AWS", image: "/static/clients/logo_aws.svg", website: "https://aws.amazon.com" },
+        { id: 20, name: "BusinessFit", image: "/static/clients/logo_businessfit.svg", website: "https://businessfit.co.za" },
+        { id: 21, name: "Galelo", image: "/static/clients/logo_galelo.svg", website: "https://galelo.com" },
+        { id: 22, name: "Gaotime", image: "/static/clients/logo_gaotime.svg", website: "https://gaotime.com" },
+        { id: 23, name: "Korbistat", image: "/static/clients/logo_korbistat.svg", website: "https://korbistat.co.za" },
+        { id: 24, name: "LexisNexis", image: "/static/clients/logo_lexisnexis.svg", website: "https://www.lexisnexis.com" },
+        { id: 25, name: "Nelson Mandela University", image: "/static/clients/logo_nmu.svg", website: "https://nmu.ac.za" },
+        { id: 26, name: "PlantSAP", image: "/static/clients/logo_plantsap.svg", website: "https://plantsap.co.za" },
+        { id: 27, name: "QQ", image: "/static/clients/logo_qq.svg", website: "https://www.qq.com" },
+        { id: 28, name: "Mhlontlo Local Municipality", image: "/static/clients/mhlontlo.png", website: "https://mhlontlo.co.za" },
+        { id: 29, name: "Native Child", image: "/static/clients/native_child.png", website: "https://nativechild.co.za" },
+        { id: 30, name: "Oliven", image: "/static/clients/oliven.png", website: "https://oliven.co.za" },
+        { id: 31, name: "Pan African Capital Holdings", image: "/static/clients/panafrican_capital_holdings_limited_logo.jpeg", website: "https://panafricancapitalholdings.com" },
+        { id: 32, name: "Rebosis", image: "/static/clients/rebosis.jpeg", website: "https://rebosis.co.za" },
+        { id: 33, name: "SABS", image: "/static/clients/SABS-approved.svg", website: "https://sabs.co.za" },
+        { id: 34, name: "SAMWU", image: "/static/clients/SAMWU_logo.png", website: "https://samwu.co.za" },
+        { id: 35, name: "SAFCOL", image: "/static/clients/safcol.png", website: "https://safcol.co.za" },
+        { id: 37, name: "DevHub", image: "/static/clients/The-Dev-Hub_Dark-Blue.png", website: "https://www.devhub.co.za" },
+        { id: 38, name: "Road Traffic Infringement Agency", image: "/static/clients/thumb_road_traffic_infringement_agency_(rtia).png", website: "https://www.rtia.co.za" },
+    ];
+    const clientsRow = document.getElementById('clients-row');
 
-let modalEl, labelEl, iconEl, titleEl, challengeEl, approachEl, listEl;
+    const fragment = document.createDocumentFragment();
 
-document.addEventListener("DOMContentLoaded", () => {
+    clients.forEach(client => {
 
-    modalEl = document.getElementById("industryModal");
-    labelEl = document.getElementById("industryModalLabel");
-    iconEl = document.getElementById("industryIcon");
-    titleEl = document.getElementById("industryTitle");
-    challengeEl = document.getElementById("industryChallenge");
-    approachEl = document.getElementById("industryApproach");
-    listEl = document.getElementById("industryBenefits");
+    const card = document.createElement('a');
+    card.className = 'client-card';
+    card.href = client.website;
+    card.target = "_blank";
+    card.rel = "noopener noreferrer";
 
-    // safety guard
-    if (!modalEl) return;
-});
+    card.innerHTML = `
+        <div class="client-card__inner">
 
-window.showIndustry = function (key) {
+        <div class="client-card__logo">
+            <img 
+            src="${client.image}" 
+            alt="${client.name}" 
+            loading="lazy"
+            decoding="async"
+            />
+        </div>
 
-    const industry = industries[key];
-    if (!industry || !modalEl) return;
+        <div class="client-card__meta">
+            <span class="client-card__name">${client.name}</span>
+            <span class="client-card__sector">${client.sector || ''}</span>
+        </div>
 
-    // TEXT
-    labelEl.textContent = industry.title;
-    titleEl.textContent = industry.title;
-    challengeEl.textContent = industry.challenge;
-    approachEl.textContent = industry.approach;
+        </div>
+    `;
 
-    // ICON RESET (safe)
-    iconEl.className = "";
-    industry.icon.split(" ").forEach(c => iconEl.classList.add(c));
+    fragment.appendChild(card);
+    });
 
-    // BENEFITS
-    listEl.innerHTML = industry.benefits
-        .map(b => `
-            <li class="wc-benefit-item">
-                <i class="fas fa-check-circle"></i>
-                <span>${b}</span>
-            </li>
-        `)
-        .join("");
-
-    // OPEN
-    modalEl.classList.add("active");
-    modalEl.setAttribute("aria-hidden", "false");
-    document.body.classList.add("modal-open");
-};
-
-function closeIndustryModal() {
-    if (!modalEl) return;
-
-    modalEl.classList.remove("active");
-    modalEl.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("modal-open");
-}
-
-// backdrop click
-document.addEventListener("click", (e) => {
-    if (e.target.matches("#industryModal, #industryModal [data-close]")) {
-        closeIndustryModal();
-    }
-});
-
-// ESC key
-document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-        closeIndustryModal();
-    }
-});
-  </script>
+    clientsRow.appendChild(fragment);
+</script>
 
 </body>
 </html>

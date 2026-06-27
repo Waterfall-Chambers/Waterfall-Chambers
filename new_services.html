@@ -19,8 +19,10 @@
 
   <!-- Waterfall Chambers Design System — the only stylesheet needed -->
   <link rel="stylesheet" href="/static/styles/new_main.css" />
-  <link rel="stylesheet" href="/static/styles/modal.css" />
-  <title>Waterfall Chambers | Industries</title>
+  <link rel="stylesheet" href="/static/styles/modal.css">
+  <link rel="stylesheet" href="/static/styles/services.css" />
+
+  <title>Waterfall Chambers | Services</title>
 </head>
 <body>
 
@@ -43,9 +45,9 @@
         <!-- Desktop menu -->
         <ul class="site-menu" role="list">
           <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
+          <li class="active"><a href="services.html">Services</a></li>
           <li><a href="clients.html">Clients</a></li>
-          <li class="active"><a href="industries.html">Industries</a></li>
+          <li><a href="industries.html">Industries</a></li>
           <li><a href="careers.html">Careers</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html" class="contact-btn">Contact</a></li>
@@ -111,7 +113,7 @@
 
     <!-- Background photo layer -->
     <div class="hero-slide" aria-hidden="true">
-      <div class="img" style="background-image: url('/static/images/museums-victoria-7YUvAUbfSV0-unsplash.jpg');"></div>
+      <div class="img" style="background-image: url('/static/images/charles-forerunner-3fPXt37X6UQ-unsplash.jpg');"></div>
     </div>
 
     <!-- Decorative grid overlay -->
@@ -130,7 +132,7 @@
     </div>
 
     <div class="container title_section">
-      <!--<div class="hero-eyebrow">SA's premier CA(SA) federated chambers</div>-->
+      <div class="hero-eyebrow">SA's premier CA(SA) federated chambers</div>
 
       <h1 data-aos="fade-up">
         One Standard,<br>
@@ -156,88 +158,53 @@
 
   </section>
 
-  <section class="section" aria-labelledby="services-heading">
+  <section class="section section--raised">
     <div class="container">
+        <div class="section-tag" data-aos="fade-up">Services</div>
 
-      <div class="section-header">
-        <div class="section-tag">Industries We Empower</div>
-        <p>Navigating complex business landscapes with clarity, precision, and innovation.</p>
-      </div>
-
-      <div class="grid-auto">
-
-        <div class="service-card">
-          <div class="service-card__icon">
-            <i class="fas fa-chart-line" aria-hidden="true"></i>
-          </div>
-          <h3 class="service-card__title">Finance & Banking</h3>
-          <a onclick="showIndustry('finance')" class="service-card__tag">View →</a>
+        <p class="t-body text-center mb-5">
+            Explore our wide range of services in the catalogue below
+        </p>
+        <div class="container my-5">
+        <div class="row" id="servicesContainer"></div>
         </div>
 
-        <div class="service-card">
-          <div class="service-card__icon">
-            <i class="fas fa-microchip" aria-hidden="true"></i>
-          </div>
-          <h3 class="service-card__title">Tech & Innovation</h3>
-          <a onclick="showIndustry('tech')" class="service-card__tag">View →</a>
+
+<!-- MODAL BACKDROP + MODAL -->
+<div class="wc-modal" id="serviceModal" aria-hidden="true" role="dialog" aria-modal="true">
+
+    <!-- BACKDROP -->
+    <div class="wc-modal__backdrop" data-close></div>
+
+    <!-- MODAL PANEL -->
+    <div class="wc-modal__panel" role="document">
+
+        <!-- HEADER -->
+        <div class="wc-modal__header">
+
+            <h5 class="wc-modal__title" id="serviceModalLabel"></h5>
+
+            <button class="wc-modal__close" data-close aria-label="Close modal">
+                <i class="fas fa-xmark"></i>
+            </button>
+
         </div>
 
-        <div class="service-card">
-          <div class="service-card__icon">
-            <i class="fas fa-building" aria-hidden="true"></i>
-          </div>
-          <h3 class="service-card__title">Real Estate & Construction</h3>
-          <a onclick="showIndustry('real_estate')" class="service-card__tag">View →</a>
+        <!-- BODY -->
+        <div class="wc-modal__body">
+
+            <img id="modalImage" src="" alt="" loading="lazy" />
+
+            <div id="modalDescription" class="wc-modal__description"></div>
+
         </div>
-
-        <div class="service-card">
-          <div class="service-card__icon">
-            <i class="fas fa-heartbeat" aria-hidden="true"></i>
-          </div>
-          <h3 class="service-card__title">Healthcare & Pharmaceuticals</h3>
-          <a onclick="showIndustry('healthcare')" class="service-card__tag">View →</a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-card__icon">
-            <i class="fas fa-university" aria-hidden="true"></i>
-          </div>
-          <h3 class="service-card__title">Public Sector & Education</h3>
-          <a onclick="showIndustry('public_sector')" class="service-card__tag">View →</a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-card__icon">
-            <i class="fas fa-bolt" aria-hidden="true"></i>
-          </div>
-          <h3 class="service-card__title">Energy & Mining</h3>
-          <a onclick="showIndustry('energy')" class="service-card__tag">View →</a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-card__icon">
-            <i class="fas fa-industry" aria-hidden="true"></i>
-          </div>
-          <h3 class="service-card__title">Manufacturing & Retail</h3>
-          <a onclick="showIndustry('manufacturing')" class="service-card__tag">View →</a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-card__icon">
-            <i class="fas fa-balance-scale" aria-hidden="true"></i>
-          </div>
-          <h3 class="service-card__title">Legal & Professional Services</h3>
-          <a onclick="showIndustry('legal')" class="service-card__tag">View →</a>
-        </div>
-
-      </div>
-
-      <div style="text-align:center;margin-top:var(--space-8);">
-        <a href="services.html" class="btn btn--ghost">View all services</a>
-      </div>
 
     </div>
+
+</div>
+    </div>
   </section>
+
 
   <footer class="site-footer" role="contentinfo">
     <div class="container">
@@ -317,85 +284,9 @@
     </div>
   </footer>
 
-  <!-- ===========================
-     INDUSTRY MODAL (PURE SYSTEM)
-=========================== -->
-
-<div class="wc-modal" id="industryModal" aria-hidden="true" role="dialog">
-
-  <!-- BACKDROP -->
-  <div class="wc-modal__backdrop" data-close></div>
-
-  <!-- PANEL -->
-  <div class="wc-modal__panel wc-modal__panel--lg">
-
-    <!-- HEADER -->
-    <div class="wc-modal__header wc-modal__header--gradient">
-
-      <div class="wc-modal__header-content">
-        <h3 class="wc-modal__title" id="industryModalLabel"></h3>
-        <p class="wc-modal__subtitle">Industry insight overview</p>
-      </div>
-
-      <button class="wc-modal__close" data-close aria-label="Close modal">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
-    </div>
-
-    <!-- BODY -->
-    <div class="wc-modal__body">
-
-      <!-- HERO STRIP -->
-      <div class="wc-modal__hero">
-
-        <div class="wc-modal__icon">
-          <i id="industryIcon" aria-hidden="true"></i>
-        </div>
-
-        <div class="wc-modal__hero-text">
-          <div class="wc-modal__title">Industry Breakdown</div>
-          <h2 class="wc-modal__description" id="industryTitle"></h2>
-        </div>
-
-      </div>
-
-      <!-- STACKED CONTENT -->
-      <div class="wc-modal__stack">
-
-        <!-- CHALLENGE -->
-        <section class="wc-panel wc-panel--danger">
-
-          <div class="wc-modal__title">Challenge</div>
-          <p class="wc-modal__description" id="industryChallenge"></p>
-
-        </section>
-
-        <!-- APPROACH -->
-        <section class="wc-panel wc-panel--primary">
-
-          <div class="wc-modal__title">Our Approach</div>
-          <p class="wc-modal__description" id="industryApproach"></p>
-
-        </section>
-
-        <!-- BENEFITS -->
-        <section class="wc-panel wc-panel--neutral">
-
-          <div class="wc-modal__title">Key Benefits</div>
-
-          <ul id="industryBenefits" class="wc-modal__description"></ul>
-
-        </section>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
+  <!-- ═══════════════════════════════════════════════════════
+       SCRIPTS
+  ════════════════════════════════════════════════════════ -->
   <script>
     /* —— Year —— */
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -472,165 +363,254 @@
       });
     }
 
-const industries = {
-    finance: {
-        title: "Finance & Banking",
-        icon: "fas fa-chart-line",
-        challenge: "Navigating complex regulations, digital transformation, and evolving market risks.",
-        approach: "We provide CA(SA)-led audit, advisory, and compliance services tailored for banks, insurers, and asset managers.",
-        benefits: [
-            "Faster audit cycles with proprietary tools",
-            "Comprehensive risk management and regulatory support",
-            "Strategic financial advisory with measurable impact"
-        ],
-    },
-    tech: {
-        title: "Tech & Innovation",
-        icon: "fas fa-microchip",
-        challenge: "Driving scalable growth and compliance in a rapidly evolving tech ecosystem.",
-        approach: "We bridge finance and technology, offering audits, fintech advisory, and digital strategy services.",
-        benefits: [
-            "Custom tech audits and security compliance",
-            "Innovative financial models for startups",
-            "Support for digital transformation initiatives"
-        ],
-    },
-    real_estate: {
-        title: "Real Estate & Construction",
-        icon: "fas fa-building",
-        challenge: "Ensuring financial control and project governance across complex property developments.",
-        approach: "Our teams deliver audit, advisory, and financial modeling solutions for developers and investors.",
-        benefits: [
-            "Project risk assessment and mitigation",
-            "Investor reporting and compliance",
-            "Optimized financial structures for growth"
-        ],
-    },
-    healthcare: {
-        title: "Healthcare & Pharmaceuticals",
-        icon: "fas fa-heartbeat",
-        challenge: "Meeting strict compliance standards while driving innovation in patient care and pharma supply chains.",
-        approach: "We support healthcare providers, hospitals, and pharma firms with governance, audit, and funding strategies.",
-        benefits: [
-            "End-to-end compliance with healthcare regulations",
-            "Optimized supply chain and inventory controls",
-            "Financial sustainability for hospitals and clinics"
-        ],
-    },
-    public_sector: {
-        title: "Public Sector & Education",
-        icon: "fas fa-university",
-        challenge: "Balancing accountability, transparency, and performance in service delivery.",
-        approach: "We partner with government entities, NGOs, and educational institutions to strengthen governance and reporting.",
-        benefits: [
-            "Robust financial oversight and audit compliance",
-            "Capacity building for sustainable growth",
-            "Improved efficiency in service delivery"
-        ],
-    },
-    energy: {
-        title: "Energy & Mining",
-        icon: "fas fa-bolt",
-        challenge: "Managing sustainability, operational risks, and global commodity price fluctuations.",
-        approach: "We advise mining and energy clients on financial structuring, compliance, and ESG.",
-        benefits: [
-            "Optimized cost structures and risk mitigation",
-            "ESG-driven financial and audit reporting",
-            "Long-term sustainability and investor confidence"
-        ],
-    },
-    manufacturing: {
-        title: "Manufacturing & Retail",
-        icon: "fas fa-industry",
-        challenge: "Ensuring supply chain resilience, financial control, and digital adaptation.",
-        approach: "We deliver audit, advisory, and operational improvement solutions.",
-        benefits: [
-            "Cost optimization across supply chains",
-            "Digital solutions for retail growth",
-            "Robust inventory and financial controls"
-        ],
-    },
-    legal: {
-        title: "Legal & Professional Services",
-        icon: "fas fa-balance-scale",
-        challenge: "Balancing growth, compliance, and client trust in a competitive market.",
-        approach: "We optimize financial management and governance for professional firms.",
-        benefits: [
-            "Enhanced governance and financial reporting",
-            "Operational efficiencies for practice management",
-            "Improved client trust through transparency"
-        ],
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  const container = document.getElementById('servicesContainer');
+
+  const modalElement = document.getElementById('serviceModal');
+  const modalTitle = document.getElementById('serviceModalLabel');
+  const modalImage = document.getElementById('modalImage');
+  const modalDescription = document.getElementById('modalDescription');
+
+  // IMPORTANT: make sure this is NOT empty
+  const services = [
+  {
+    id: 1,
+    title: "External & Internal Audit",
+    category: "Assurance",
+    icon: "fa-gavel",
+    image: "/static/images/kelly-sikkema-G_91H-3qZOA-unsplash.jpg",
+    focus_area: "Governance & Compliance",
+    tags: ["IRBA", "King IV", "Risk Assurance"],
+    short_desc: "Independent audit services ensuring compliance, transparency, and governance integrity.",
+    full_desc: "We provide both external and internal audit services designed to deliver assurance, strengthen governance, and enhance accountability. Our approach ensures compliance with statutory requirements while identifying risks, inefficiencies, and opportunities for improvement across all financial and operational processes."
+  },
+
+  {
+    id: 2,
+    title: "Accounting & Audit Readiness",
+    category: "Assurance",
+    icon: "fa-file-invoice",
+    image: "/static/images/stellrweb-djb1whucfBY-unsplash.jpg",
+    focus_area: "Financial Reporting",
+    tags: ["Reporting", "Compliance", "Preparation"],
+    short_desc: "Accounting support and structured audit readiness for seamless financial reporting.",
+    full_desc: "Our accounting support services prepare organizations for smooth and efficient audits. We streamline financial reporting, ensure compliance with accounting standards, and provide audit readiness assessments to help businesses avoid delays, reduce risks, and maintain operational transparency."
+  },
+
+  {
+    id: 3,
+    title: "Tax Advisory",
+    category: "Advisory",
+    icon: "fa-receipt",
+    image: "/static/images/tax-consulting.jpg",
+    focus_area: "Tax Strategy",
+    tags: ["Tax Planning", "Compliance", "Structuring"],
+    short_desc: "Strategic tax planning and advisory for individuals and enterprises.",
+    full_desc: "We assist businesses and individuals with comprehensive tax consulting services, from compliance and planning to advisory on complex tax matters. Our experts provide tailored strategies to optimize tax efficiency, manage liabilities, and ensure adherence to evolving regulatory requirements."
+  },
+
+  {
+    id: 4,
+    title: "Financial Modelling & Valuations",
+    category: "Corporate Finance",
+    icon: "fa-chart-line",
+    image: "/static/images/finance-modelling.jpg",
+    focus_area: "Valuation & Analysis",
+    tags: ["DCF", "Valuation", "Forecasting"],
+    short_desc: "Advanced financial modelling, valuation, and investment analysis.",
+    full_desc: "We offer robust financial modelling and valuations that support informed decision-making. Our services cover project finance, employee benefits analysis, and corporate valuations, helping clients navigate investments, acquisitions, and strategic initiatives with clarity and precision."
+  },
+
+  {
+    id: 5,
+    title: "Corporate Finance",
+    category: "Corporate Finance",
+    icon: "fa-coins",
+    image: "/static/images/corporate-finance.jpg",
+    focus_area: "Capital Strategy",
+    tags: ["M&A", "Restructuring", "Investment"],
+    short_desc: "Strategic capital structure, mergers, acquisitions, and investment advisory.",
+    full_desc: "Our corporate finance team helps businesses make informed strategic and financial decisions. We provide guidance on mergers, acquisitions, restructuring, and investment strategies, ensuring organizations are positioned for long-term growth and sustainability."
+  },
+
+  {
+    id: 6,
+    title: "Transaction Advisory",
+    category: "Deals",
+    icon: "fa-handshake",
+    image: "/static/images/transaction-advisory.jpg",
+    focus_area: "Deal Execution",
+    tags: ["Due Diligence", "Valuation", "Structuring"],
+    short_desc: "End-to-end support for buy-side and sell-side transactions.",
+    full_desc: "We support clients in executing successful transactions with confidence. Our transaction advisory covers buy-side and sell-side support, due diligence, valuation reviews, and deal structuring, ensuring optimal outcomes in mergers, acquisitions, and divestitures."
+  },
+
+  {
+    id: 7,
+    title: "Capital Raising Advisory",
+    category: "Corporate Finance",
+    icon: "fa-piggy-bank",
+    image: "/static/images/capital-raising.jpg",
+    focus_area: "Funding Strategy",
+    tags: ["Equity", "Debt", "Investors"],
+    short_desc: "Structuring and securing optimal debt and equity financing solutions.",
+    full_desc: "We provide expert advisory on raising capital, structuring debt, and equity solutions. Our team assists with funding strategies, investor relations, and market positioning, helping organizations secure the right financing for growth and expansion."
+  },
+
+  {
+    id: 8,
+    title: "Business Process Re-engineering",
+    category: "Consulting",
+    icon: "fa-sitemap",
+    image: "/static/images/business-process.jpg",
+    focus_area: "Operational Efficiency",
+    tags: ["Efficiency", "Optimization", "Automation"],
+    short_desc: "Redesigning business processes to improve efficiency and performance.",
+    full_desc: "We analyze and redesign business processes to enhance efficiency, reduce costs, and improve service delivery. Our approach aligns people, technology, and strategy, ensuring organizations are agile and competitive in today’s market."
+  },
+
+  {
+    id: 9,
+    title: "Management Consulting",
+    category: "Consulting",
+    icon: "fa-briefcase",
+    image: "/static/images/management-consulting.jpg",
+    focus_area: "Strategy & Operations",
+    tags: ["Strategy", "Operations", "Growth"],
+    short_desc: "Strategic advisory across operations, procurement, and performance.",
+    full_desc: "We offer comprehensive management consulting services across infrastructure, strategy, operations, procurement, and performance monitoring. Our goal is to help organizations unlock value, improve performance, and achieve sustainable growth."
+  },
+
+  {
+    id: 10,
+    title: "ICT Audit & Digital Forensics",
+    category: "Technology",
+    icon: "fa-shield-halved",
+    image: "/static/images/ict-audit.jpg",
+    focus_area: "Digital Assurance",
+    tags: ["Cyber Risk", "Forensics", "IT Audit"],
+    short_desc: "ICT audit, digital forensics, and IT assurance services.",
+    full_desc: "We provide ICT audit advisory, digital forensics, and software quality assurance to safeguard businesses from risks and vulnerabilities. Our services ensure robust systems, secure data, and resilient digital operations."
+  },
+
+  {
+    id: 11,
+    title: "Cloud Engineering & Software Development",
+    category: "Technology",
+    icon: "fa-cloud",
+    image: "/static/images/luca-bravo-XJXWbfSo2f0-unsplash.jpg",
+    focus_area: "Digital Transformation",
+    tags: ["Cloud", "AI", "Systems"],
+    short_desc: "Cloud architecture, software development, and data solutions.",
+    full_desc: "We design and implement cloud engineering solutions, advanced data analytics, and bespoke software tailored to business needs. Our expertise enables digital transformation, scalability, and innovation for organizations of all sizes."
+  },
+
+  {
+    id: 12,
+    title: "Economic Damage Quantification",
+    category: "Forensics",
+    icon: "fa-scale-balanced",
+    image: "/static/images/economic-damages.jpg",
+    focus_area: "Forensic Analysis",
+    tags: ["Litigation", "Loss Analysis", "Expert Reports"],
+    short_desc: "Expert quantification of financial loss and economic damages.",
+    full_desc: "We specialize in the quantification of economic damages, including loss of support and future medical costs. Our precise calculations and expert reports assist in legal proceedings, insurance claims, and settlement negotiations."
+  }
+  ];
+
+  // -----------------------------
+  // MODAL CONTROL (CUSTOM)
+  // -----------------------------
+
+  function openModal(service) {
+    modalTitle.textContent = service.title;
+    modalImage.src = service.image;
+    modalImage.alt = service.title;
+    modalDescription.textContent = service.full_desc;
+
+    modalElement.classList.add('active');
+    modalElement.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+  }
+
+  function closeModal() {
+    modalElement.classList.remove('active');
+    modalElement.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+
+    modalImage.src = "";
+  }
+
+  // backdrop + close buttons
+  modalElement.addEventListener('click', (e) => {
+    if (e.target.dataset.close !== undefined) {
+      closeModal();
     }
-};
+  });
 
-let modalEl, labelEl, iconEl, titleEl, challengeEl, approachEl, listEl;
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
 
-document.addEventListener("DOMContentLoaded", () => {
+  // -----------------------------
+  // RENDER SERVICES
+  // -----------------------------
 
-    modalEl = document.getElementById("industryModal");
-    labelEl = document.getElementById("industryModalLabel");
-    iconEl = document.getElementById("industryIcon");
-    titleEl = document.getElementById("industryTitle");
-    challengeEl = document.getElementById("industryChallenge");
-    approachEl = document.getElementById("industryApproach");
-    listEl = document.getElementById("industryBenefits");
+  const fragment = document.createDocumentFragment();
+    services.forEach(service => {
 
-    // safety guard
-    if (!modalEl) return;
-});
+    const tile = document.createElement('div');
+    tile.className = 'service-tile';
 
-window.showIndustry = function (key) {
+    tile.innerHTML = `
+        <div class="service-tile__media">
+        <img 
+            src="${service.image}" 
+            alt="${service.title}" 
+            loading="lazy"
+            decoding="async"
+        />
 
-    const industry = industries[key];
-    if (!industry || !modalEl) return;
+        <div class="service-tile__overlay"></div>
 
-    // TEXT
-    labelEl.textContent = industry.title;
-    titleEl.textContent = industry.title;
-    challengeEl.textContent = industry.challenge;
-    approachEl.textContent = industry.approach;
+        <div class="service-tile__badge">
+            ${service.category || 'Advisory'}
+        </div>
+        </div>
 
-    // ICON RESET (safe)
-    iconEl.className = "";
-    industry.icon.split(" ").forEach(c => iconEl.classList.add(c));
+        <div class="service-tile__body">
 
-    // BENEFITS
-    listEl.innerHTML = industry.benefits
-        .map(b => `
-            <li class="wc-benefit-item">
-                <i class="fas fa-check-circle"></i>
-                <span>${b}</span>
-            </li>
-        `)
-        .join("");
+        <div class="service-tile__meta">
+            <span class="service-tile__kicker">Service</span>
+        </div>
 
-    // OPEN
-    modalEl.classList.add("active");
-    modalEl.setAttribute("aria-hidden", "false");
-    document.body.classList.add("modal-open");
-};
+        <h3 class="service-tile__title">
+            ${service.title}
+        </h3>
 
-function closeIndustryModal() {
-    if (!modalEl) return;
+        <p class="service-tile__text">
+            ${service.short_desc}
+        </p>
 
-    modalEl.classList.remove("active");
-    modalEl.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("modal-open");
-}
+        <button class="service-tile__btn" type="button">
+            Explore Service
+            <i class="fas fa-arrow-right"></i>
+        </button>
 
-// backdrop click
-document.addEventListener("click", (e) => {
-    if (e.target.matches("#industryModal, #industryModal [data-close]")) {
-        closeIndustryModal();
-    }
-});
+        </div>
+    `;
 
-// ESC key
-document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-        closeIndustryModal();
-    }
-});
+    tile.querySelector('.service-tile__btn').addEventListener('click', () => {
+        openModal(service);
+    });
+
+    container.appendChild(tile);
+    });
+    container.appendChild(fragment);
+
+    });
   </script>
 
 </body>
