@@ -1099,5 +1099,161 @@
         padding:12px 18px;
 
     }
+}
+
+/*────────────────────────────────────────────
+ Photographer Credit
+────────────────────────────────────────────*/
+
+.gallery-credit{
+
+    padding:5rem 0;
+
+}
+
+.gallery-credit__card{
+
+    display:flex;
+    align-items:center;
+    gap:2rem;
+
+    padding:2rem;
+
+    border-radius:28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.03),
+            rgba(255,255,255,.01)
+        );
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.18),
+        inset 0 1px 0 rgba(255,255,255,.05);
+
+}
+
+.gallery-credit__icon{
+
+    width:74px;
+    height:74px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:1.6rem;
+
+    color:white;
+
+    background:#C5A04D;
+
+    flex-shrink:0;
+
+}
+
+.gallery-credit__content{
+
+    flex:1;
+
+}
+
+.gallery-credit__label{
+
+    display:inline-block;
+
+    margin-bottom:.4rem;
+
+    font-size:.75rem;
+
+    text-transform:uppercase;
+
+    letter-spacing:.2em;
+
+    color:var(--accent);
+
+    font-family:var(--font-mono);
+
+}
+
+.gallery-credit__name{
+
+    margin:0;
+
+    font-family:var(--font-display);
+
+    font-size:1.6rem;
+
+    color:var(--txt-primary);
+
+}
+
+.gallery-credit__text{
+
+    margin-top:.8rem;
+
+    max-width:620px;
+
+    color:var(--txt-secondary);
+
+    line-height:1.8;
+
+}
+
+.gallery-credit__link{
+
+    display:inline-flex;
+    align-items:center;
+    gap:.7rem;
+
+    padding:14px 24px;
+
+    border-radius:999px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    color:#fff;
+
+    background:#003D52;
+    
+    transition:.35s;
+
+    flex-shrink:0;
+
+}
+
+.gallery-credit__link:hover{
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 15px 35px var(--accent-glow);
+
+}
+
+@media(max-width:900px){
+
+    .gallery-credit__card{
+
+        flex-direction:column;
+        text-align:center;
+
+    }
+
+    .gallery-credit__text{
+
+        margin-inline:auto;
+
+    }
 
 }
