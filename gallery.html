@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Waterfall Chambers gallery — events, team moments, and client work across South Africa." />
+  <meta name="author" content="Waterfall Chambers" />
+
+  <link rel="shortcut icon" href="/static/Waterfall CA SA Chambers logo/Waterfall Chambers Approved Logos - PNG-20260309T201432Z-1-001/Waterfall Chambers Approved Logos - PNG/Waterfall-CA_SA-Chambers-Logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="/static/styles/new_main.css" />
+  <link rel="stylesheet" href="/static/styles/gallery.css" />
+
+  <title>Waterfall Chambers | Gallery</title>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="index.html" class="logo-link" aria-label="Waterfall Chambers home">
+          <img src="/static/Waterfall CA SA Chambers logo/Waterfall Chambers Approved Logos - PNG-20260309T201432Z-1-001/Waterfall Chambers Approved Logos - PNG/Waterfall-chambers-logo-horizontal_enhanced_nopayoff_transp background.png" class="logo-img" alt="Waterfall Chambers" />
+        </a>
+        <ul class="site-menu" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="clients.html">Clients</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li class="active"><a href="gallery.html">Gallery</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="contact-btn">Contact</a></li>
+        </ul>
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <button id="themeToggle" class="btn btn--muted btn--sm" aria-label="Toggle light/dark mode">
+            <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+            <span id="themeLabel">Light</span>
+          </button>
+          <button class="mobile-toggle" id="mobileToggle" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobileMenu">
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="mobile-menu-header">
+      <img src="/static/Waterfall CA SA Chambers logo/Waterfall Chambers Approved Logos - PNG-20260309T201432Z-1-001/Waterfall Chambers Approved Logos - PNG/Waterfall-chambers-logo-horizontal_enhanced_nopayoff_transp background.png" class="mobile-logo" alt="Waterfall Chambers" />
+      <button class="close-menu" id="closeMenu" aria-label="Close mobile menu">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+    </div>
+    <ul class="mobile-nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="clients.html">Clients</a></li>
+      <li><a href="industries.html">Industries</a></li>
+      <li class="active"><a href="gallery.html">Gallery</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="mobile-menu__cta">
+      <a href="contact.html" class="btn btn--primary btn--lg">Get in touch</a>
+    </div>
+  </div>
+
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Gallery hero">
+    <div class="hero-slide" aria-hidden="true">
+      <div class="img" style="background-image: url('https://res.cloudinary.com/dbuuizuka/image/upload/v1783796868/Group_1_guw6fa.png');"></div>
+    </div>
+    <div class="hero-grid-overlay" aria-hidden="true">
+      <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="wc-grid" width="60" height="60" patternUnits="userSpaceOnUse">
+            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="currentColor" stroke-width="0.6"/>
+          </pattern>
+        </defs>
+        <rect width="1200" height="600" fill="url(#wc-grid)" color="#00D4FF"/>
+        <circle cx="900" cy="220" r="120" fill="none" stroke="#00D4FF" stroke-width="0.5" opacity="0.6"/>
+        <circle cx="900" cy="220" r="200" fill="none" stroke="#00D4FF" stroke-width="0.3" opacity="0.3"/>
+        <line x1="0" y1="300" x2="1200" y2="300" stroke="#00D4FF" stroke-width="0.4" stroke-dasharray="6 12" opacity="0.5"/>
+      </svg>
+    </div>
+    <div class="container title_section">
+      <h1 data-aos="fade-up">
+        Waterfall Chambers<br><em>Gallery</em>
+      </h1>
+      <p class="lead" data-aos="fade-up" data-aos-delay="100">
+        Events, team moments, and a look at the work we do across South Africa.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- GALLERY SECTION -->
+  <section class="section" aria-labelledby="gallery-heading">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-tag">Our gallery</div>
+        <h2 id="gallery-heading">Events &amp; Work</h2>
+        <p>Filter by category or browse everything below. Click any image to expand.</p>
+      </div>
+
+      <!-- Filter bar -->
+      <div class="filter-bar" role="group" aria-label="Filter gallery by category">
+        <button class="filter-btn active" data-filter="all">
+          All
+          <span class="filter-btn__count" id="count-all"></span>
+        </button>
+        <button class="filter-btn" data-filter="events">
+          Events
+          <span class="filter-btn__count" id="count-events"></span>
+        </button>
+        <button class="filter-btn" data-filter="work">
+          Work
+          <span class="filter-btn__count" id="count-work"></span>
+        </button>
+        <button class="filter-btn" data-filter="team">
+          Team
+          <span class="filter-btn__count" id="count-team"></span>
+        </button>
+      </div>
+
+      <!-- Masonry grid — items injected by JS -->
+      <div class="gallery-masonry" id="galleryGrid" role="list"></div>
+
+      <!-- Empty state -->
+      <div id="galleryEmpty" style="display:none;text-align:center;padding:var(--space-16) 0;">
+        <p class="t-body">No images in this category yet.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- LIGHTBOX -->
+  <div class="gallery-lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <div class="gallery-lightbox__inner">
+      <button class="gallery-lightbox__close" id="lbClose" aria-label="Close image viewer">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <img class="gallery-lightbox__img" id="lbImg" src="" alt="" />
+      <div class="gallery-lightbox__meta">
+        <div class="gallery-lightbox__meta-text">
+          <span class="gallery-lightbox__cat" id="lbCat"></span>
+          <span class="gallery-lightbox__title" id="lbTitle"></span>
+          <span class="gallery-lightbox__counter" id="lbCounter"></span>
+        </div>
+        <div class="gallery-lightbox__nav">
+          <button class="gallery-nav-btn" id="lbPrev" aria-label="Previous image">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <button class="gallery-nav-btn" id="lbNext" aria-label="Next image">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/static/Waterfall CA SA Chambers logo/Waterfall Chambers Approved Logos - PNG-20260309T201432Z-1-001/Waterfall Chambers Approved Logos - PNG/Waterfall-chambers-logo-horizontal_enhanced_nopayoff_transp background.png" class="footer-logo" alt="Waterfall Chambers" />
+          <p class="footer-description">Audit, advisory, financial consulting and digital transformation services to organisations across South Africa.</p>
+          <address class="footer-address" style="font-style:normal;">
+            WorkPods, 1024 Brand Road<br>President Park, Midrand<br>Gauteng, South Africa
+          </address>
+          <div class="footer-contact-links">
+            <a href="tel:+27101430339">010 143 0339</a>
+            <a href="mailto:info@waterfallchambers.co.za">info@waterfallchambers.co.za</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul role="list">
+            <li><a href="services.html">Audit</a></li>
+            <li><a href="services.html">Accounting</a></li>
+            <li><a href="services.html">Tax Advisory</a></li>
+            <li><a href="services.html">Corporate Finance</a></li>
+            <li><a href="services.html">ICT &amp; Technology</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul role="list">
+            <li><a href="about.html">About</a></li>
+            <li><a href="clients.html">Clients</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="careers.html">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Twitter / X"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          </div>
+          <p class="footer-note">Follow us for updates, insights and industry news.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Waterfall Chambers. All rights reserved.</p>
+        <div class="footer-compliance-tags">
+          <span class="badge badge--muted">CA(SA)</span>
+          <span class="badge badge--muted">King IV</span>
+          <span class="badge badge--muted">IRBA</span>
+          <span class="badge badge--muted">Level 1 B-BBEE</span>
+        </div>
+        <p>Developed by <a href="https://wytbusinesssolutions.netlify.app/" target="_blank" rel="noopener">WytBusiness Solutions</a></p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+  /* ═══ GALLERY DATA
+     Replace src values with your actual image paths.
+     category: 'events' | 'work' | 'team'
+     aspect: 'tall' | 'wide' | 'square' — controls CSS height so masonry varies
+  ═══════════════════════════════════════════════════ */
+  const GALLERY = [
+    { src: 'https://res.cloudinary.com/dbuuizuka/image/upload/v1783797011/Mr_Mabala_1_rfg2tk.png',   title: 'Office Photo Shoot',  category: 'team', aspect: 'tall'   },
+    { src: 'https://res.cloudinary.com/dbuuizuka/image/upload/v1783797501/Unknown_2_bgz8mo.png',    title: 'Office Photo Shoot', category: 'team',   aspect: 'square'   },
+    { src: 'https://res.cloudinary.com/dbuuizuka/image/upload/v1783797283/Unknown_1_ltfmr0.png',    title: 'Office Photo Shoot',   category: 'team',   aspect: 'square' },
+    { src: 'https://res.cloudinary.com/dbuuizuka/image/upload/v1783797117/Unknown_1_flqnpa.png',   title: 'Office Photo Shoot',    category: 'team', aspect: 'square'   },
+    { src: 'https://res.cloudinary.com/dbuuizuka/image/upload/v1783797569/Cinga_3_jyl3bf.png',    title: 'Office Photo Shoot',          category: 'team',   aspect: 'tall'   },
+    { src: 'https://res.cloudinary.com/dbuuizuka/image/upload/v1783797088/siya_1_gntu36.png',    title: 'Office Photo Shoot',           category: 'team',   aspect: 'square' },
+    { src: 'https://res.cloudinary.com/dbuuizuka/image/upload/v1783797147/Unknown_1_dhnpvr.png',   title: 'Office Photo Shoot',       category: 'team', aspect: 'square' },
+    { src: 'https://res.cloudinary.com/dbuuizuka/image/upload/v1783797435/Unknown_2_nyvfey.png',    title: 'Office Photo Shoot',   category: 'team',   aspect: 'square'   },
+    { src: 'https://res.cloudinary.com/dbuuizuka/image/upload/v1783797653/JB_2_xazom1.png',    title: 'Office Photo Shoot',   category: 'team',   aspect: 'tall'   },
+    { src: 'https://res.cloudinary.com/dbuuizuka/image/upload/v1783797045/NATE_1_adcgor.png',    title: 'Office Photo Shoot',   category: 'team',   aspect: 'square'   },
+    { src: 'https://res.cloudinary.com/dbuuizuka/image/upload/v1783797886/MR_Mabala_3_xy725j.png',   title: 'Professional Shoot',     category: 'team', aspect: 'tall'   },
+    { src: 'https://res.cloudinary.com/dbuuizuka/image/upload/v1783798161/Unknown_1_qpe7rr.png',    title: 'Professional Shoot',      category: 'team',   aspect: 'square' },
+    { src: 'https://res.cloudinary.com/dbuuizuka/image/upload/v1783798311/Unknown_2_sx6myt.png',   title: 'Professional Shoot',category: 'team', aspect: 'square'   },
+    { src: 'https://res.cloudinary.com/dbuuizuka/image/upload/v1783798058/Unknown_2_owerpe.png',    title: 'Professional Shoot', category: 'team',   aspect: 'tall'   },
+    { src: 'https://res.cloudinary.com/dbuuizuka/image/upload/v1783797804/Cinga_2_dozwom.png',    title: 'Professional Shoot',          category: 'team',   aspect: 'square'   },
+    { src: 'https://res.cloudinary.com/dbuuizuka/image/upload/v1783797971/siya_3_j60jwj.png',   title: 'Professional Shoot',          category: 'team', aspect: 'square' },
+    { src: 'https://res.cloudinary.com/dbuuizuka/image/upload/v1783798018/Unknown_1_xl6erx.png',   title: 'Professional Shoot',          category: 'team', aspect: 'square' },
+    { src: 'https://res.cloudinary.com/dbuuizuka/image/upload/v1783797842/JB_3_fpfjaq.png',   title: 'Professional Shoot',          category: 'team', aspect: 'tall' },
+    { src: 'https://res.cloudinary.com/dbuuizuka/image/upload/v1783797923/NATE_aoc0um.png',   title: 'Professional Shoot',          category: 'team', aspect: 'square' },
+    { src: 'https://res.cloudinary.com/dbuuizuka/image/upload/v1783798115/Unknown_2_oidq2x.png',   title: 'Professional Shoot',          category: 'team', aspect: 'square' },
+
+  ];
+
+  /* Heights per aspect ratio */
+  const HEIGHTS = { tall: '320px', wide: '200px', square: '260px' };
+
+  /* Category label map */
+  const CAT_LABELS = { events: 'Events', work: 'Work', team: 'Team' };
+
+  /* ── Build grid ── */
+  const grid    = document.getElementById('galleryGrid');
+  const empty   = document.getElementById('galleryEmpty');
+  let activeIdx = 0;       /* lightbox current index into visible items */
+  let visible   = [];      /* filtered subset */
+
+  function buildItems() {
+    grid.innerHTML = '';
+    GALLERY.forEach(function(item, i) {
+      var el = document.createElement('div');
+      el.className = 'gallery-item';
+      el.setAttribute('role', 'listitem');
+      el.dataset.category = item.category;
+      el.dataset.index    = i;
+
+      el.innerHTML =
+        '<img src="' + item.src + '" alt="' + item.title + '" loading="lazy" style="height:' + (HEIGHTS[item.aspect] || '240px') + ';" />' +
+        '<div class="gallery-item__overlay">' +
+          '<span class="gallery-item__cat">' + (CAT_LABELS[item.category] || item.category) + '</span>' +
+          '<span class="gallery-item__title">' + item.title + '</span>' +
+        '</div>' +
+        '<button class="gallery-item__expand" aria-label="Expand ' + item.title + '">' +
+          '<i class="fa-solid fa-expand" aria-hidden="true"></i>' +
+        '</button>';
+
+      el.addEventListener('click', function() {
+        var visIdx = visible.indexOf(i);
+        openLightbox(visIdx >= 0 ? visIdx : 0);
+      });
+
+      grid.appendChild(el);
+    });
+    updateCounts();
+  }
+
+  /* ── Filter ── */
+  function applyFilter(cat) {
+    var items = grid.querySelectorAll('.gallery-item');
+    visible = [];
+    var shown = 0;
+    items.forEach(function(el) {
+      var match = cat === 'all' || el.dataset.category === cat;
+      if (match) {
+        el.classList.remove('hidden');
+        visible.push(parseInt(el.dataset.index, 10));
+        shown++;
+      } else {
+        el.classList.add('hidden');
+      }
+    });
+    empty.style.display = shown === 0 ? 'block' : 'none';
+  }
+
+  /* ── Count badges ── */
+  function updateCounts() {
+    var counts = { events: 0, work: 0, team: 0 };
+    GALLERY.forEach(function(item) { counts[item.category]++; });
+    document.getElementById('count-all').textContent    = GALLERY.length;
+    document.getElementById('count-events').textContent = counts.events;
+    document.getElementById('count-work').textContent   = counts.work;
+    document.getElementById('count-team').textContent   = counts.team;
+  }
+
+  /* Filter buttons */
+  document.querySelectorAll('.filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      applyFilter(btn.dataset.filter);
+    });
+  });
+
+  /* ── Lightbox ── */
+  var lightbox = document.getElementById('lightbox');
+  var lbImg    = document.getElementById('lbImg');
+  var lbCat    = document.getElementById('lbCat');
+  var lbTitle  = document.getElementById('lbTitle');
+  var lbCounter= document.getElementById('lbCounter');
+
+  function openLightbox(visIdx) {
+    activeIdx = visIdx;
+    renderLightbox();
+    lightbox.classList.add('active');
+    document.body.classList.add('menu-open'); /* reuse scroll lock class */
+    document.getElementById('lbClose').focus();
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.classList.remove('menu-open');
+  }
+
+  function renderLightbox() {
+    var item = GALLERY[visible[activeIdx]];
+    lbImg.src        = item.src;
+    lbImg.alt        = item.title;
+    lbCat.textContent   = CAT_LABELS[item.category] || item.category;
+    lbTitle.textContent = item.title;
+    lbCounter.textContent = (activeIdx + 1) + ' / ' + visible.length;
+  }
+
+  function lbPrevNext(dir) {
+    activeIdx = (activeIdx + dir + visible.length) % visible.length;
+    renderLightbox();
+  }
+
+  document.getElementById('lbClose').addEventListener('click', closeLightbox);
+  document.getElementById('lbPrev').addEventListener('click', function() { lbPrevNext(-1); });
+  document.getElementById('lbNext').addEventListener('click', function() { lbPrevNext(1); });
+
+  /* Close on backdrop click */
+  lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  /* Keyboard nav */
+  document.addEventListener('keydown', function(e) {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape')      closeLightbox();
+    if (e.key === 'ArrowLeft')   lbPrevNext(-1);
+    if (e.key === 'ArrowRight')  lbPrevNext(1);
+  });
+
+  /* ── Init ── */
+  buildItems();
+  applyFilter('all');
+
+  /* ═══ STANDARD PAGE SCRIPTS ═══════════════════════════ */
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var html       = document.documentElement;
+  var themeBtn   = document.getElementById('themeToggle');
+  var themeLabel = document.getElementById('themeLabel');
+  var saved      = localStorage.getItem('wc-theme') || 'dark';
+  html.setAttribute('data-theme', saved);
+  themeLabel.textContent = saved === 'dark' ? 'Light' : 'Dark';
+  themeBtn.addEventListener('click', function() {
+    var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    themeLabel.textContent = next === 'dark' ? 'Light' : 'Dark';
+    localStorage.setItem('wc-theme', next);
+  });
+
+  var mobileToggle = document.getElementById('mobileToggle');
+  var mobileMenu   = document.getElementById('mobileMenu');
+  var closeMenu    = document.getElementById('closeMenu');
+
+  function openMobileMenu() {
+    mobileMenu.classList.add('active');
+    document.body.classList.add('menu-open');
+    mobileToggle.setAttribute('aria-expanded', 'true');
+    closeMenu.focus();
+  }
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('active');
+    document.body.classList.remove('menu-open');
+    mobileToggle.setAttribute('aria-expanded', 'false');
+    mobileToggle.focus();
+  }
+
+  mobileToggle.addEventListener('click', openMobileMenu);
+  closeMenu.addEventListener('click', closeMobileMenu);
+  mobileMenu.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', closeMobileMenu);
+  });
+
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('[data-aos]').forEach(function(el) {
+      el.style.animationPlayState = 'paused';
+      observer.observe(el);
+    });
+  }
+  </script>
+
+</body>
+</html>
