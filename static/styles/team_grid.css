@@ -46,28 +46,51 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
+  isolation: isolate;
   background: #f1f2f4;
+}
+
+.team-card__img-wrap::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  inset: -55px;
+  background-image: var(--member-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(35px);
+  transform: scale(1.15);
+  opacity: .8;
 }
 
 .team-card__img-wrap::after {
   content: "";
   position: absolute;
+  z-index: 0;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, .18), transparent 45%);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, .02),
+    rgba(255, 255, 255, .04) 55%,
+    rgba(255, 255, 255, .2) 100%
+  );
   pointer-events: none;
 }
 
 .member-img {
+  position: relative;
+  z-index: 1;
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  object-fit: contain;
+  object-position: center;
   transition: transform .55s cubic-bezier(.2, .65, .3, 1);
 }
 
 .team-card:hover .member-img {
-  transform: scale(1.045);
+  transform: scale(1.025);
 }
 
 .team-card__details {
@@ -125,7 +148,9 @@
   height: 35px;
   color: #555;
   border: 1px solid rgba(20, 25, 35, .1);
-  background: #fff;
+  background: rgba(255, 255, 255, .72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   text-decoration: none;
   transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
 }
@@ -133,7 +158,7 @@
 .team-card__contact a:hover {
   color: #17191d;
   border-color: rgba(20, 25, 35, .22);
-  background: #f7f7f7;
+  background: rgba(255, 255, 255, .95);
   transform: translateY(-2px);
 }
 
@@ -241,27 +266,53 @@
 
 .profile-modal__image {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-width: 0;
   min-height: 0;
   height: 100%;
   overflow: hidden;
+  isolation: isolate;
   background: #f1f2f4;
+}
+
+.profile-modal__image::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  inset: -60px;
+  background-image: var(--member-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(45px);
+  transform: scale(1.15);
+  opacity: .82;
 }
 
 .profile-modal__image::after {
   content: "";
   position: absolute;
+  z-index: 0;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, .2), transparent 40%);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, .02),
+    rgba(255, 255, 255, .05) 65%,
+    rgba(255, 255, 255, .18) 100%
+  );
   pointer-events: none;
 }
 
 .profile-modal__image img {
+  position: relative;
+  z-index: 1;
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  object-fit: contain;
+  object-position: center;
 }
 
 .profile-modal__details {
@@ -387,6 +438,10 @@ body.profile-modal-open {
     height: 270px;
   }
 
+  .profile-modal__image img {
+    object-fit: contain;
+  }
+
   .profile-modal__details {
     flex: 1;
     padding: 32px 25px 38px;
@@ -406,7 +461,7 @@ body.profile-modal-open {
   }
 
   .team-card__img-wrap {
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 4 / 3;
   }
 
   .team-card__details {
@@ -418,8 +473,12 @@ body.profile-modal-open {
   }
 
   .profile-modal__image {
-    flex-basis: 230px;
-    height: 230px;
+    flex: 0 0 240px;
+    height: 240px;
+  }
+
+  .profile-modal__image img {
+    object-fit: contain;
   }
 
   .profile-modal__details {
@@ -433,6 +492,34 @@ body.profile-modal-open {
   .profile-modal__bio {
     font-size: .9rem;
     line-height: 1.75;
+  }
+}
+
+@media (max-width: 420px) {
+  .team-card__img-wrap {
+    aspect-ratio: 1 / 1;
+  }
+
+  .profile-modal {
+    padding: 8px;
+  }
+
+  .profile-modal__dialog {
+    height: calc(100vh - 16px);
+    max-height: calc(100vh - 16px);
+  }
+
+  .profile-modal__image {
+    flex-basis: 220px;
+    height: 220px;
+  }
+
+  .profile-modal__details {
+    padding: 24px 18px 30px;
+  }
+
+  .profile-modal__contact {
+    gap: 10px 16px;
   }
 }
 
