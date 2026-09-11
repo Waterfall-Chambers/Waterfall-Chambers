@@ -20,6 +20,7 @@
 
   <!-- Waterfall Chambers Design System — the only stylesheet needed -->
   <link rel="stylesheet" href="/static/styles/new_main.css" />
+  <link rel="stylesheet" href="/static/styles/team_grid.css" />
 
   <title>Waterfall Chambers</title>
 </head>
@@ -47,7 +48,7 @@
           <li><a href="services.html">Services</a></li>
           <li><a href="clients.html">Clients</a></li>
           <li><a href="industries.html">Industries</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
+          <!--<li><a href="gallery.html">Gallery</a></li>-->
           <li><a href="careers.html">Careers</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html" class="contact-btn">Contact</a></li>
@@ -97,7 +98,7 @@
       <li><a href="services.html">Services</a></li>
       <li><a href="clients.html">Clients</a></li>
       <li><a href="industries.html">Industries</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
+      <!--<li><a href="gallery.html">Gallery</a></li>-->
       <li><a href="careers.html">Careers</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
@@ -390,19 +391,38 @@
   ════════════════════════════════════════════════════════ -->
   <section class="section section--raised" aria-labelledby="leadership-heading">
     <div class="container">
-
       <div class="section-header">
         <div class="section-tag">Our people</div>
         <h2 id="leadership-heading">Leadership</h2>
         <p>Meet the experts driving our success</p>
       </div>
 
-      <!-- Team members injected by JS below. Fallback card shown here as example. -->
-      <div id="team-row" class="stack stack--md"></div>
-
+      <div id="team-row" class="team-grid"></div>
     </div>
   </section>
 
+  <div id="profile-modal" class="profile-modal" aria-hidden="true">
+    <div class="profile-modal__backdrop" data-close-profile></div>
+
+    <div class="profile-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="profile-name">
+      <button class="profile-modal__close" type="button" aria-label="Close profile" data-close-profile>
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+
+      <div class="profile-modal__content">
+        <div class="profile-modal__image">
+          <img id="profile-image" src="" alt="">
+        </div>
+
+        <div class="profile-modal__details">
+          <div id="profile-title" class="team-card__title t-mono"></div>
+          <h3 id="profile-name"></h3>
+          <div id="profile-contact" class="profile-modal__contact"></div>
+          <div id="profile-bio" class="profile-modal__bio"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ═══════════════════════════════════════════════════════
        GOVERNANCE & TRANSFORMATION
@@ -500,7 +520,7 @@
             <li><a href="about.html">About</a></li>
             <li><a href="clients.html">Clients</a></li>
             <li><a href="industries.html">Industries</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
+            <!--<li><a href="gallery.html">Gallery</a></li>-->
             <li><a href="contact.html">Contact</a></li>
             <li><a href="careers.html">Careers</a></li>
           </ul>
@@ -797,47 +817,178 @@
     }
 
     /* —— Team members data + injection —— */
-    const teamMembers = [
-      {
-        name:  "Thato Makautse CA(SA), AFM",
-        title: "Chambers President",
-        email: "Thato.Makautse@waterfallchambers.com",
-        phone: "+27 63 692 5688",
-        image: "/static/partners/Thato.jpg",
-        bio:   "Leads the chamber with strategic oversight, ensuring operational excellence and fostering professional growth across member firms."
-      }
-      /* Add more members here as objects following the same shape */
-    ];
+  const teamMembers = [
+    {
+      name: "Thato Makautse CA(SA), AFM",
+      title: "Chambers President",
+      email: "Thato.Makautse@waterfallchambers.com",
+      phone: "+27 63 692 5688",
+      image: "https://res.cloudinary.com/dbuuizuka/image/upload/v1783797501/Unknown_2_bgz8mo.png",
+      summary: "Provides strategic leadership and advances the Chambers' vision of a modern, multidisciplinary African professional services institution.",
+      bio: [
+        "Thato Makautse serves as President of Waterfall Chartered Accountants Chambers, where he provides strategic leadership to the Chambers and is responsible for advancing its vision of building a modern, multidisciplinary African professional services institution.",
+        "As President, Thato leads the alignment of the Chambers’ member firms, executive portfolios and strategic initiatives, ensuring that their collective expertise is translated into differentiated solutions for clients. His role is centred on institutional strategy, market positioning, collaboration and the continued development of a Chambers model that brings together accounting, assurance, corporate finance, technology, artificial intelligence, governance and continental trade capabilities under a shared platform.",
+        "Thato is a Chartered Accountant (SA) and Advanced Financial Modeler with experience across corporate finance, valuations, transaction advisory, financial modelling, capital raising and specialised financial advisory. His professional background has given him exposure to complex commercial, financial and strategic engagements across both private and public sector environments.",
+        "His leadership philosophy is rooted in collaboration and the belief that the future of professional services will increasingly depend on the ability to combine specialist disciplines rather than operate through traditional professional silos. This philosophy underpins the Waterfall Chambers model — creating an environment in which independent professional firms can retain their specialist identities while combining their capabilities to pursue larger, more complex and more innovative opportunities.",
+        "Thato has a particular interest in the intersection between finance, entrepreneurship, technology and African economic development, with a focus on building commercially relevant solutions that respond to evolving client, market and institutional needs.",
+        "As Chambers President, his focus is on ensuring that Waterfall remains commercially relevant, institutionally credible and forward-looking — creating a platform through which African professional expertise can collaborate, innovate and compete at scale."
+      ]
+    },
+    {
+      name: "Sakhile Mngomezulu CA(SA), RA, BRP",
+      title: "Chambers Secretary",
+      email: "Sakhile.Mngomezulu@waterfallchambers.com",
+      phone: "",
+      image: "https://res.cloudinary.com/dbuuizuka/image/upload/v1783797283/Unknown_1_ltfmr0.png",
+      summary: "Oversees governance coordination, institutional administration and the responsible development of the Chambers' products and services.",
+      bio: [
+        "Sakhile Mngomezulu serves as Chambers Secretary of Waterfall Chartered Accountants Chambers, where he is responsible for the general secretariat, governance coordination and institutional administration of the Chambers.",
+        "His role is centred on ensuring that the Chambers operates with appropriate structure, discipline and continuity as it brings together multiple professional firms, disciplines and leadership portfolios. He supports the effective functioning of the Chambers’ governance structures, coordinates key institutional matters, and helps ensure that strategic decisions and responsibilities are appropriately documented and followed through.",
+        "Sakhile also plays a leading role in the development and refinement of the Chambers’ products and service offerings, ensuring that new initiatives are aligned to Waterfall’s broader strategic objectives and are responsive to evolving market needs. As the Chambers seeks to reimagine the future of professional services and introduce new multidisciplinary solutions, he helps ensure that innovation is balanced with sound governance, regulatory compliance and commercial relevance.",
+        "Sakhile is a Chartered Accountant (SA), Registered Auditor and licensed Business Rescue Practitioner, giving him a multidisciplinary professional background spanning accounting, assurance, governance and business restructuring. His combination of professional designations provides him with a strong appreciation of the technical, regulatory and fiduciary responsibilities that underpin well-governed organisations.",
+        "As Chambers Secretary, Sakhile plays an important role in maintaining the institutional backbone of Waterfall — helping the Chambers innovate responsibly, remain aligned with the market and operate within a strong governance and compliance framework as it continues to grow."
+      ]
+    },
+    {
+      name: "Cinga Nyangintsimbi",
+      title: "Chief Financial Officer",
+      email: "Cinga.Nyangintsimbi@waterfallchambers.com",
+      phone: "",
+      image: "https://res.cloudinary.com/dbuuizuka/image/upload/v1783797569/Cinga_3_jyl3bf.png",
+      summary: "Provides financial stewardship through commercial strategy, sustainability, innovation and disciplined investment in the Chambers' future.",
+      bio: [
+        "Cinga Nyangintsimbi serves as Chief Financial Officer (CFO) of Waterfall Chartered Accountants Chambers, bringing a distinctive combination of technology entrepreneurship, commercial leadership and innovation to the financial stewardship of the Chambers.",
+        "His appointment reflects Waterfall’s multidisciplinary approach to professional services. In a Chambers built around deep Chartered Accountancy and financial expertise, the CFO role extends beyond traditional accounting and reporting. Cinga’s mandate encompasses financial strategy, commercial sustainability, investment in technology and infrastructure, and ensuring that the Chambers allocates resources in a manner that supports innovation, growth and long-term institutional resilience.",
+        "Cinga is a technology entrepreneur with extensive experience in building and scaling digital businesses and technology-enabled solutions. His leadership and contribution to South Africa’s technology industry were recognised when he was named 2024 IT Personality of the Year by the Institute of IT Professionals South Africa.",
+        "His experience is grounded in the practical application of technology to complex commercial and social challenges. He has led the rollout of technology-enabled initiatives, including solutions supporting scholar transport, and has developed a strong track record of using digital platforms to improve operational visibility, coordination and service delivery.",
+        "Cinga’s broader leadership philosophy is centred on the use of technology as a strategic enabler rather than simply an operational support function. His work reflects a strong interest in innovation, digital transformation, youth development and the creation of scalable African technology solutions.",
+        "As CFO of Waterfall Chartered Accountants Chambers, Cinga brings this technology-led and entrepreneurial perspective into the financial leadership of the institution. His focus is on combining strong financial discipline with innovation and commercial agility, ensuring that the Chambers remains sustainable while investing in the capabilities required for its future growth."
+      ]
+    },
+    {
+      name: "Siyanda Mqokozo",
+      title: "Chief Artificial Intelligence Officer",
+      email: "Siya.Mqokozo@waterfallchambers.com",
+      phone: "",
+      image: "https://res.cloudinary.com/dbuuizuka/image/upload/v1783797088/siya_1_gntu36.png",
+      summary: "Leads the Chambers' AI, technology infrastructure, automation, data analytics and digital innovation strategy.",
+      bio: [
+        "Siyanda Mqokozo serves as Chief Artificial Intelligence Officer (CAIO) of Waterfall Chartered Accountants Chambers, where he leads the Chambers’ artificial intelligence strategy, technology infrastructure and digital innovation agenda.",
+        "He is responsible for positioning technology as a core business enabler across the Chambers, with a focus on artificial intelligence, intelligent automation, data analytics, secure digital infrastructure and scalable technology solutions. His mandate is centred on improving operational efficiency, strengthening data governance and enabling the Chambers to deliver increasingly sophisticated professional services through technology.",
+        "Siyanda brings extensive experience across technology risk, data analytics, assurance and digital transformation, developed through roles within leading professional services firms in both South Africa and the United Kingdom. His international exposure, combined with his experience in complex corporate and assurance environments, has given him a strong understanding of the intersection between technology, governance, risk management and business performance.",
+        "His work has also contributed to the broader African audit and technology ecosystem, including participation in industry platforms focused on the practical application of artificial intelligence within internal audit. He has also been involved in initiatives supporting the development of the internal audit profession across the continent, including engagements associated with the African Federation of Institutes of Internal Auditors.",
+        "As CAIO, Siyanda’s focus is on building a technology-enabled Chambers that can operate efficiently at scale, protect sensitive information, automate complex processes and develop innovative digital solutions for clients operating in an increasingly connected African business environment."
+      ]
+    },
+    {
+      name: "Riaan Govender",
+      title: "Chief Continental Trade Officer",
+      email: "Riaan.Govender@waterfallchambers.com",
+      phone: "",
+      image: "https://res.cloudinary.com/dbuuizuka/image/upload/v1783797117/Unknown_1_flqnpa.png",
+      summary: "Leads the Chambers' continental trade strategy, focusing on AfCFTA opportunities, African markets and cross-border commercial relationships.",
+      bio: [
+        "Riaan Govender serves as Chief Continental Trade Officer (CCTO) of Waterfall Chartered Accountants Chambers, where he is responsible for shaping and leading the Chambers’ continental trade strategy, with a particular focus on unlocking opportunities arising from the African Continental Free Trade Area (AfCFTA).",
+        "In this role, Riaan leads the Chambers’ efforts to build strategic relationships across African markets, working to establish networks with business leaders, professional bodies, chambers of commerce, trade institutions and other key stakeholders. His mandate is centred on identifying and facilitating cross-border commercial opportunities for the Chambers, its member firms and their clients, while positioning Waterfall as a trusted professional services partner for businesses seeking to operate and expand across the continent.",
+        "Riaan is a seasoned Tax Practitioner and Accountant with extensive practical experience in taxation, financial matters and stakeholder engagement. His professional experience includes navigating complex tax matters and disputes, including engagements involving labour organisations and other institutional stakeholders. This has developed his ability to operate in technically complex and commercially sensitive environments where regulatory understanding, negotiation and relationship management are critical.",
+        "Combining his financial and tax expertise with a strong focus on relationship-building and African economic integration, Riaan brings a commercially grounded perspective to the Chambers’ continental expansion agenda. As CCTO, his focus is on translating the opportunities created by AfCFTA into meaningful business relationships, market access and sustainable economic opportunities for Waterfall and its clients across Africa."
+      ]
+    }
+  ];
 
-    const teamRow = document.getElementById('team-row');
+  const teamRow = document.getElementById("team-row");
+  const profileModal = document.getElementById("profile-modal");
+  const profileImage = document.getElementById("profile-image");
+  const profileName = document.getElementById("profile-name");
+  const profileTitle = document.getElementById("profile-title");
+  const profileContact = document.getElementById("profile-contact");
+  const profileBio = document.getElementById("profile-bio");
 
-    teamMembers.forEach(member => {
-      const article = document.createElement('article');
-      article.className = 'team-card';
-      article.innerHTML = `
-        <div class="team-card__img-wrap">
-          <img src="${member.image}" alt="Portrait of ${member.name}" class="member-img" loading="lazy" />
+  teamMembers.forEach((member, index) => {
+    const article = document.createElement("article");
+    article.className = "team-card";
+
+    article.innerHTML = `
+      <div class="team-card__img-wrap">
+        <img src="${member.image}" alt="Portrait of ${member.name}" class="member-img" loading="lazy">
+      </div>
+      <div class="team-card__details">
+        <div>
+          <div class="team-card__title t-mono">${member.title}</div>
+          <h3 class="team-card__name">${member.name}</h3>
+          <p class="team-card__summary">${member.summary}</p>
         </div>
-        <div class="team-card__details">
-          <div>
-            <div class="team-card__title t-mono">${member.title}</div>
-            <h3 class="team-card__name">${member.name}</h3>
-          </div>
+        <div class="team-card__footer">
           <div class="team-card__contact">
-            <a href="mailto:${member.email}">
-              <i class="fa-regular fa-envelope" aria-hidden="true"></i>
-              ${member.email}
-            </a>
-            <a href="tel:${member.phone.replace(/\s/g,'')}">
-              <i class="fa-solid fa-phone" aria-hidden="true"></i>
-              ${member.phone}
-            </a>
+            ${member.email ? `
+              <a href="mailto:${member.email}" aria-label="Email ${member.name}">
+                <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+              </a>
+            ` : ""}
+            ${member.phone ? `
+              <a href="tel:${member.phone.replace(/\s/g, "")}" aria-label="Call ${member.name}">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              </a>
+            ` : ""}
           </div>
-          <p class="team-card__bio">${member.bio}</p>
+          <button class="team-card__view" type="button" data-profile="${index}">
+            View profile
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </button>
         </div>
-      `;
-      teamRow.appendChild(article);
-    });
+      </div>
+    `;
+
+    teamRow.appendChild(article);
+  });
+
+  function openProfile(index) {
+    const member = teamMembers[index];
+
+    profileImage.src = member.image;
+    profileImage.alt = `Portrait of ${member.name}`;
+    profileName.textContent = member.name;
+    profileTitle.textContent = member.title;
+
+    profileContact.innerHTML = `
+      ${member.email ? `
+        <a href="mailto:${member.email}">
+          <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+          ${member.email}
+        </a>
+      ` : ""}
+      ${member.phone ? `
+        <a href="tel:${member.phone.replace(/\s/g, "")}">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          ${member.phone}
+        </a>
+      ` : ""}
+    `;
+
+    profileBio.innerHTML = member.bio.map(paragraph => `<p>${paragraph}</p>`).join("");
+
+    profileModal.classList.add("is-open");
+    profileModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("profile-modal-open");
+  }
+
+  function closeProfile() {
+    profileModal.classList.remove("is-open");
+    profileModal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("profile-modal-open");
+  }
+
+  document.addEventListener("click", event => {
+    const profileButton = event.target.closest("[data-profile]");
+    const closeButton = event.target.closest("[data-close-profile]");
+
+    if (profileButton) openProfile(profileButton.dataset.profile);
+    if (closeButton) closeProfile();
+  });
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && profileModal.classList.contains("is-open")) closeProfile();
+  });
   </script>
 
 </body>
