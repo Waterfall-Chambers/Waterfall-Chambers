@@ -137,10 +137,13 @@
         <!-- Logo -->
         <a href="index.html" class="logo-link" aria-label="Waterfall Chambers home">
           <img
+            id="desktopLogo"
             src="/static/Waterfall CA SA Chambers logo/Waterfall Chambers Approved Logos - PNG-20260309T201432Z-1-001/Waterfall Chambers Approved Logos - PNG/Waterfall-chambers-logo-horizontal_enhanced_nopayoff_transp background.png"
+            data-dark-logo="/static/Waterfall CA SA Chambers logo/Waterfall Chambers Approved Logos - PNG-20260309T201432Z-1-001/Waterfall Chambers Approved Logos - PNG/Waterfall CA logo - Horizontal inverted transp.png"
+            data-light-logo="/static/Waterfall CA SA Chambers logo/Waterfall Chambers Approved Logos - PNG-20260309T201432Z-1-001/Waterfall Chambers Approved Logos - PNG/Waterfall-chambers-logo-horizontal_enhanced_nopayoff_transp background.png"
             class="logo-img"
-            alt="Waterfall Chambers"
-          />
+            alt="Waterfall Chartered Accountants Chambers"
+          >
         </a>
 
         <!-- Desktop menu -->
@@ -186,10 +189,13 @@
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
     <div class="mobile-menu-header">
       <img
+        id="mobileLogo"
         src="/static/Waterfall CA SA Chambers logo/Waterfall Chambers Approved Logos - PNG-20260309T201432Z-1-001/Waterfall Chambers Approved Logos - PNG/Waterfall-chambers-logo-horizontal_enhanced_nopayoff_transp background.png"
+        data-dark-logo="/static/Waterfall CA SA Chambers logo/Waterfall Chambers Approved Logos - PNG-20260309T201432Z-1-001/Waterfall Chambers Approved Logos - PNG/Waterfall CA logo - Horizontal inverted transp.png"
+        data-light-logo="/static/Waterfall CA SA Chambers logo/Waterfall Chambers Approved Logos - PNG-20260309T201432Z-1-001/Waterfall Chambers Approved Logos - PNG/Waterfall-chambers-logo-horizontal_enhanced_nopayoff_transp background.png"
         class="mobile-logo"
         alt="Waterfall Chambers"
-      />
+      >
       <button class="close-menu" id="closeMenu" aria-label="Close mobile menu">
         <i class="fa-solid fa-xmark" aria-hidden="true"></i>
       </button>
@@ -891,19 +897,77 @@
     document.getElementById('year').textContent = new Date().getFullYear();
 
     /* —— Theme toggle —— */
-    const html       = document.documentElement;
-    const themeBtn   = document.getElementById('themeToggle');
-    const themeLabel = document.getElementById('themeLabel');
-    const saved      = localStorage.getItem('wc-theme') || 'dark';
-    html.setAttribute('data-theme', saved);
-    themeLabel.textContent = saved === 'dark' ? 'Light' : 'Dark';
 
-    themeBtn.addEventListener('click', () => {
-      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', next);
-      themeLabel.textContent = next === 'dark' ? 'Light' : 'Dark';
-      localStorage.setItem('wc-theme', next);
-    });
+    const html = document.documentElement;
+    const themeBtn = document.getElementById('themeToggle');
+    const themeLabel = document.getElementById('themeLabel');
+
+    const desktopLogo = document.getElementById('desktopLogo');
+    const mobileLogo = document.getElementById('mobileLogo');
+
+    function applyTheme(theme) {
+        // Validate theme
+        const activeTheme = theme === 'light' ? 'light' : 'dark';
+
+        // Apply theme
+        html.setAttribute('data-theme', activeTheme);
+
+        // Update button label
+        if (themeLabel) {
+            themeLabel.textContent = activeTheme === 'dark' ? 'Light' : 'Dark';
+        }
+
+        // Update logo assets
+        const logos = [desktopLogo, mobileLogo];
+
+        logos.forEach(logo => {
+            if (!logo) return;
+
+            const logoPath = activeTheme === 'dark'
+                ? logo.dataset.darkLogo
+                : logo.dataset.lightLogo;
+
+            if (logoPath) {
+                logo.src = logoPath;
+            }
+        });
+
+        // Update accessibility label
+        if (themeBtn) {
+            themeBtn.setAttribute(
+                'aria-label',
+                `Switch to ${activeTheme === 'dark' ? 'light' : 'dark'} mode`
+            );
+        }
+
+        // Persist preference
+        try {
+            localStorage.setItem('wc-theme', activeTheme);
+        } catch (error) {
+            console.warn('Unable to save theme preference:', error);
+        }
+    }
+
+    // Restore saved theme on page load
+    let savedTheme = 'dark';
+
+    try {
+        savedTheme = localStorage.getItem('wc-theme') || 'dark';
+    } catch (error) {
+        console.warn('Unable to retrieve saved theme:', error);
+    }
+
+    applyTheme(savedTheme);
+
+    // Toggle theme
+    if (themeBtn) {
+        themeBtn.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            applyTheme(nextTheme);
+        });
+    }
 
     /* —— Mobile menu —— */
     const mobileToggle = document.getElementById('mobileToggle');

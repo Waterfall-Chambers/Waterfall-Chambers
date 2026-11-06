@@ -2067,3 +2067,429 @@ body.menu-open {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+  .about-section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-intro {
+    max-width: 950px;
+    margin: 0 auto;
+  }
+
+  .about-intro .intro-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-intro .intro-copy {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--text-muted, #a8b1c2);
+  }
+
+  .about-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brand-primary, #C5A04D);
+    margin-bottom: 1.25rem;
+  }
+
+  .about-eyebrow::before {
+    content: "";
+    width: 26px;
+    height: 1px;
+    background: currentColor;
+  }
+
+  /* =====================================================
+      CHAMBERS ADVANTAGE
+      ===================================================== */
+
+  .advantage-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.1rem;
+    margin-top: 2.5rem;
+  }
+
+  .advantage-card {
+    padding: 1.6rem;
+    border-radius: 12px;
+    background: var(--surface, rgba(255,255,255,0.035));
+    border: 1px solid var(--border, rgba(255,255,255,0.08));
+    transition: transform .25s ease, border-color .25s ease;
+  }
+
+  .advantage-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--brand-primary, #C5A04D);
+  }
+
+  .advantage-card__icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(0, 169, 232, .1);
+    color: var(--brand-primary, #C5A04D);
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .advantage-card h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.05rem;
+    margin-bottom: .65rem;
+  }
+
+  .advantage-card p {
+    font-size: .9rem;
+    line-height: 1.7;
+    color: var(--text-muted, #a8b1c2);
+    margin: 0;
+  }
+
+  /* =====================================================
+      PROFESSIONAL NETWORK
+      ===================================================== */
+
+  .professional-network {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .network-intro {
+    max-width: 780px;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+
+  .network-intro p {
+    color: var(--text-muted, #a8b1c2);
+    line-height: 1.85;
+  }
+
+  .network-architecture {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .network-hub {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 2.2rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    background: var(--surface, rgba(255,255,255,.04));
+    border: 1px solid var(--border, rgba(255,255,255,.1));
+    border-top: 3px solid var(--brand-primary, #C5A04D);
+    border-radius: 12px;
+    box-shadow: 0 15px 45px rgba(0,0,0,.12);
+  }
+
+  .network-hub__icon {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.1rem;
+    border-radius: 50%;
+    background: rgba(0,169,232,.12);
+    color: var(--brand-primary, #C5A04D);
+    font-size: 1.35rem;
+  }
+
+  .network-hub h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.45rem;
+    margin-bottom: .6rem;
+  }
+
+  .network-hub p {
+    color: var(--text-muted, #a8b1c2);
+    font-size: .92rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .network-connector {
+    width: 1px;
+    height: 55px;
+    margin: 0 auto;
+    background: linear-gradient(
+      to bottom,
+      var(--brand-primary, #C5A04D),
+      rgba(0,169,232,.15)
+    );
+  }
+
+  .network-practices {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.2rem;
+    position: relative;
+  }
+
+  .practice-node {
+    position: relative;
+    padding: 1.7rem 1.4rem;
+    text-align: center;
+    background: var(--surface, rgba(255,255,255,.035));
+    border: 1px solid var(--border, rgba(255,255,255,.09));
+    border-radius: 10px;
+    transition: transform .25s ease, border-color .25s ease;
+  }
+
+  .practice-node:hover {
+    transform: translateY(-4px);
+    border-color: var(--brand-primary, #C5A04D);
+  }
+
+  .practice-node__icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    border-radius: 10px;
+    background: rgba(0,169,232,.1);
+    color: var(--brand-primary, #C5A04D);
+    font-size: 1.2rem;
+  }
+
+  .practice-node h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    margin-bottom: .5rem;
+  }
+
+  .practice-node p {
+    color: var(--text-muted, #a8b1c2);
+    font-size: .85rem;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .network-principles {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .network-principle {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background: rgba(0,169,232,.055);
+    font-size: .85rem;
+  }
+
+  .network-principle i {
+    color: var(--brand-primary, #C5A04D);
+  }
+
+  .network-note {
+    max-width: 760px;
+    margin: 2.5rem auto 0;
+    text-align: center;
+    color: var(--text-muted, #a8b1c2);
+    font-size: .85rem;
+    line-height: 1.8;
+  }
+
+  /* =====================================================
+      MISSION / VISION / VALUES
+      ===================================================== */
+
+  .mv-flow {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .mv-step {
+    position: relative;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+    border-left: 1px solid rgba(0,169,232,.3);
+  }
+
+  .mv-step:last-child {
+    border-left-color: transparent;
+    padding-bottom: 0;
+  }
+
+  .mv-step::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -6px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--brand-primary, #C5A04D);
+  }
+
+  .mv-step-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .7rem;
+    letter-spacing: .1em;
+    color: var(--brand-primary, #C5A04D);
+    margin-bottom: .9rem;
+  }
+
+  .mv-step-card {
+    padding: 1.8rem;
+    border: 1px solid var(--border, rgba(255,255,255,.08));
+    border-radius: 10px;
+    background: var(--surface, rgba(255,255,255,.035));
+  }
+
+  .mv-step-card h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    margin-bottom: .8rem;
+  }
+
+  .mv-step-card p {
+    color: var(--text-muted, #a8b1c2);
+    line-height: 1.8;
+    margin-bottom: 0;
+  }
+
+  .mv-values {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .8rem;
+    margin-top: 1.2rem;
+  }
+
+  .mv-values div {
+    padding: .85rem;
+    border-radius: 7px;
+    background: rgba(0,169,232,.055);
+    font-size: .88rem;
+    line-height: 1.6;
+  }
+
+  .mv-values strong {
+    color: var(--brand-primary, #C5A04D);
+  }
+
+  /* =====================================================
+      WHY WATERFALL
+      ===================================================== */
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem;
+  }
+
+  .why-card {
+    display: flex;
+    gap: 1.2rem;
+    padding: 1.6rem;
+    background: var(--surface, rgba(255,255,255,.035));
+    border: 1px solid var(--border, rgba(255,255,255,.08));
+    border-radius: 10px;
+    transition: border-color .25s ease, transform .25s ease;
+  }
+
+  .why-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--brand-primary, #C5A04D);
+  }
+
+  .why-icon {
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(0,169,232,.1);
+    color: var(--brand-primary, #C5A04D);
+  }
+
+  .why-content h5 {
+    font-family: 'Space Grotesk', sans-serif;
+    margin-bottom: .55rem;
+  }
+
+  .why-content p {
+    color: var(--text-muted, #a8b1c2);
+    font-size: .9rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* =====================================================
+      RESPONSIVE
+      ===================================================== */
+
+  @media (max-width: 992px) {
+    .advantage-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .network-principles {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .network-practices {
+      grid-template-columns: 1fr;
+    }
+
+    .network-connector {
+      height: 35px;
+    }
+
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .network-hub {
+      padding: 1.7rem 1.3rem;
+    }
+
+    .mv-step-card {
+      padding: 1.3rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .advantage-grid,
+    .network-principles,
+    .mv-values {
+      grid-template-columns: 1fr;
+    }
+
+    .advantage-card {
+      padding: 1.3rem;
+    }
+
+    .why-card {
+      padding: 1.2rem;
+    }
+  }
